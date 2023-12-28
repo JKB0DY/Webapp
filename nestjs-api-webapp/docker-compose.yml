@@ -9,8 +9,8 @@ services:
       - webappnet
     environment:
       POSTGRES_DB: nest
-      POSTGRES_USER: #something here
-      POSTGRES_PASSWORD: #something here
+      POSTGRES_USER: datauser
+      POSTGRES_PASSWORD: datapassword
 
 networks:
   webappnet:

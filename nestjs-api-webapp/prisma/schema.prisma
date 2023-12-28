@@ -15,11 +15,15 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  email String
+  email String @unique
   hash  String
 
   firstName String?
   lastName  String?
+
+  hardware Hardware[]
+
+  @@map("users")
 }
 
 model Hardware {
@@ -38,6 +42,9 @@ model Hardware {
   zustand             String?
   zustandBeschreibung String?
   zustandDatum        DateTime?
-  zustandUser         String?
+  zustandUserID       Int?
+  zustandUser User? @relation(fields: [zustandUserID], references: [id])
   pruefungsDatum      DateTime?
-}
+
+  @@map("hardware")
+  }
