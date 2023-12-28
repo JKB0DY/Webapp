@@ -10,4 +10,34 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {}
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email String
+  hash  String
+
+  firstName String?
+  lastName  String?
+}
+
+model Hardware {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  modell              String
+  description         String?
+  image               String?
+  kaufdatum           DateTime?
+  inhaber             String?
+  hersteller          String?
+  seriennummer        String?
+  typ                 String?
+  zustand             String?
+  zustandBeschreibung String?
+  zustandDatum        DateTime?
+  zustandUser         String?
+  pruefungsDatum      DateTime?
+}
