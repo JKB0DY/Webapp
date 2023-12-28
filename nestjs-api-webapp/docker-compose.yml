@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  postgres-nest:
+    image: postgres:13
+    ports:
+      - 5434:5432
+    networks:
+      - webappnet
+    environment:
+      POSTGRES_DB: nest
+      POSTGRES_USER: #something here
+      POSTGRES_PASSWORD: #something here
+
+networks:
+  webappnet:
