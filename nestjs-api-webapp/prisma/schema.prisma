@@ -43,7 +43,7 @@ model Hardware {
   zustandBeschreibung String?
   zustandDatum        DateTime?
   zustandUserID       Int?
-  zustandUser User? @relation(fields: [zustandUserID], references: [id], onDelete: SetNull)
+  zustandUser         User?     @relation(fields: [zustandUserID], references: [id], onDelete: SetNull)
   pruefungsDatum      DateTime?
 
   @@map("hardware")
