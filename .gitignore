@@ -1,2 +1,7 @@
 # The `test` Directory, for learning Typescript etc.
 Testing
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
