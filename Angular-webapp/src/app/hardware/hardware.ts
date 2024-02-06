@@ -15,3 +15,7 @@ export interface Hardware {
     zustandUserID?: number;
     pruefungsDatum?: Date;
 }
+
+export interface HardwareList {
+    hardware: Hardware[];
+}

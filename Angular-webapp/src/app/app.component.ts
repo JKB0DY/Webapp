@@ -10,5 +10,5 @@ import { HardwareComponent } from "./hardware/hardware.component";
     imports: [RouterOutlet, HardwareComponent]
 })
 export class AppComponent {
-  title = 'Angular-Webapp';
+    title = 'Angular-Webapp';
 }
