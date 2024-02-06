@@ -1,0 +1,13 @@
+<p>hardware works!</p>
+<h1>{{hardware}}</h1>
+<div [hidden]="hideLamps">
+    <div [innerText]="numberOfLamps"></div>
+</div>
+
+<div *ngIf="hardeware.id < 2">
+    more less than 2
+</div>
+
+
+
+<button (click)="toggle()">toggle</button>
