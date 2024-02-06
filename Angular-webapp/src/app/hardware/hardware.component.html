@@ -1,29 +1,27 @@
 <p>hardware works!</p>
-<h1>{{hardware}}</h1>
+<h1>{{ hardware }}</h1>
 <div [hidden]="hideLamps">
-    <div [innerText]="numberOfLamps"></div>
+	<div [innerText]="numberOfLamps"></div>
 </div>
 
 <div *ngIf="hardware1.id < 2">
-    <p>more less than 2</p>
-    <p>{{hardwareList[0].hardware[0].id}}</p>
-    <!-- {{hardwareList}} -->
-    <table>
-        <tr>
-            <th>id</th>
-            <th>modell</th>
-            <th>typ</th>
-            <th>zustand</th>
-        </tr>
-        <tr *ngFor="let hardware of hardwareList[0].hardware">
-            <td>{{hardware.id}}</td>
-            <td>{{hardware.modell}}</td>
-            <td>{{hardware.typ}}</td>
-            <td>{{hardware.zustand}}</td>
-        </tr>
-    </table>
+	<p>more less than 2</p>
+	<p>{{ hardwareList[0].hardware[0].id }}</p>
+	<!-- {{hardwareList}} -->
+	<table>
+		<tr>
+			<th>id</th>
+			<th>modell</th>
+			<th>typ</th>
+			<th>zustand</th>
+		</tr>
+		<tr *ngFor="let hardware of hardwareList[0].hardware">
+			<td>{{ hardware.id }}</td>
+			<td>{{ hardware.modell }}</td>
+			<td>{{ hardware.typ }}</td>
+			<td>{{ hardware.zustand }}</td>
+		</tr>
+	</table>
 </div>
-
-
 
 <button (click)="toggle()">toggle</button>

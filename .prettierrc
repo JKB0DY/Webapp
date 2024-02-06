@@ -1,0 +1,44 @@
+{
+	"singleQuote": false,
+	"quoteProps": "as-needed",
+
+	"trailingComma": "es5",
+	"semi": true,
+
+	"bracketSpacing": false,
+	"bracketSameLine": true,
+
+	"printWidth": 80,
+	"tabWidth": 4,
+	"useTabs": true,
+
+	"endOfLine": "lf",
+
+	"htmlWhitespaceSensitivity": "css",
+	"singleAttributePerLine": true,
+	"embeddedLanguageFormatting": "auto",
+
+	"overrides": [
+		{
+			"files": "*.ts",
+			"options": {
+				"parser": "typescript",
+				"singleQuote": true
+			}
+		},
+		{
+			"files": "*.json",
+			"options": {
+				"parser": "json",
+				"printWidth": 200
+			}
+		},
+		{
+			"files": "*.md",
+			"options": {
+				"parser": "markdown",
+				"printWidth": 200
+			}
+		}
+	]
+}
