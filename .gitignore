@@ -1,7 +1,54 @@
 # The `test` Directory, for learning Typescript etc.
 Testing
 
-# Node
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+nestjs-api-webapp/dist
+nestjs-api-webapp/node_modules
+Angular-Webapp/dist
+Angular-Webapp/tmp
+Angular-Webapp/out-tsc
+Angular-Webapp/bazel-out
+Angular-Webapp/node_modules
 /node_modules
-npm-debug.log
-yarn-error.log
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+Angular-Webapp/.angular/cache
+.sass-cache/
+Angular-Webapp/connect.lock
+Angular-Webapp/coverage
+Angular-Webapp/libpeerconnection.log
+testem.log
+Angular-Webapp/typings
+.env
+
+# System files
+.DS_Store
+Thumbs.db
