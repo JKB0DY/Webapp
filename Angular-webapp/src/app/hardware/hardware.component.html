@@ -1,7 +1,9 @@
 <p>hardware works!</p>
 <h1>{{ hardware }}</h1>
 <div [hidden]="hideLamps">
-	<div [innerText]="numberOfLamps"></div>
+	<div
+		[ngStyle]="{color: numberOfLamps > 0 ? 'steelblue' : 'red'}"
+		[innerText]="numberOfLamps"></div>
 </div>
 
 <div *ngIf="hardware1.id < 2">
@@ -15,7 +17,16 @@
 			<th>typ</th>
 			<th>zustand</th>
 		</tr>
-		<tr *ngFor="let hardware of hardwareList[0].hardware">
+		<tr
+			[ngClass]="e ? 'even' : 'odd'"
+			*ngFor="
+				let hardware of hardwareList[0].hardware;
+				let e = even;
+				let o = odd;
+				let i = index
+			">
+			<td>{{ i + 1 }}</td>
+			<td>{{ e ? "Even" : "odd" }}</td>
 			<td>{{ hardware.id }}</td>
 			<td>{{ hardware.modell }}</td>
 			<td>{{ hardware.typ }}</td>

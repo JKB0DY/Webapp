@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import {CommonModule} from '@angular/common';
 import {HardwareComponent} from './hardware/hardware.component';
 
 @Component({
@@ -7,8 +7,10 @@ import {HardwareComponent} from './hardware/hardware.component';
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
-	imports: [RouterOutlet, HardwareComponent],
+	imports: [CommonModule, HardwareComponent],
 })
 export class AppComponent {
 	title = 'Angular-Webapp';
+
+	role = 'Admin';
 }
