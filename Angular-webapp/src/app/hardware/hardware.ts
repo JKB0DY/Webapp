@@ -1,4 +1,10 @@
 export interface Hardware {
+	amount: number;
+	lights: number;
+	sound: number;
+}
+
+export interface HardwareList {
 	id: number;
 	modell: string;
 	createdAt: Date;
@@ -14,8 +20,4 @@ export interface Hardware {
 	zustandDatum?: Date;
 	zustandUserID?: number;
 	pruefungsDatum?: Date;
-}
-
-export interface HardwareList {
-	hardware: Hardware[];
 }

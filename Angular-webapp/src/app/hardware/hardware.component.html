@@ -1,14 +1,12 @@
 <p>hardware works!</p>
-<h1>{{ hardware }}</h1>
 <div [hidden]="hideLamps">
 	<div
 		[ngStyle]="{color: numberOfLamps > 0 ? 'steelblue' : 'red'}"
 		[innerText]="numberOfLamps"></div>
 </div>
 
-<div *ngIf="hardware1.id < 2">
-	<p>more less than 2</p>
-	<p>{{ hardwareList[0].hardware[0].id }}</p>
+<div *ngIf="hardware.amount > 10">
+	<p>Hardware List</p>
 	<!-- {{hardwareList}} -->
 	<table class="table">
 		<tr>
@@ -22,13 +20,13 @@
 		<tr
 			[ngClass]="e ? 'even' : 'odd'"
 			*ngFor="
-				let hardware of hardwareList[0].hardware;
+				let hardware of hardwareList;
 				let e = even;
 				let o = odd;
 				let i = index
 			">
 			<td>{{ i + 1 }}</td>
-			<td>{{ e ? "Even" : "odd" }}</td>
+			<td>{{ e ? "Even" : "Odd" }}</td>
 			<td>{{ hardware.id }}</td>
 			<td>{{ hardware.modell }}</td>
 			<td>{{ hardware.typ }}</td>
@@ -37,4 +35,4 @@
 	</table>
 </div>
 
-<button (click)="toggle()">toggle</button>
+<button (click)="toggle()">toggle Lamps</button>

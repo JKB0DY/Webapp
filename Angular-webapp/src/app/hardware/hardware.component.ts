@@ -10,46 +10,51 @@ import {Hardware, HardwareList} from './hardware';
 	styleUrl: './hardware.component.scss',
 })
 export class HardwareComponent implements OnInit {
-	hardware = ['vega', 'soundcraft'];
 	numberOfLamps = 20;
 	hideLamps = false;
 
-	hardware1: Hardware = {
-		id: 1,
-		modell: 'Vega',
-		createdAt: new Date('2019-01-16'),
-		updatedAt: new Date('2019-01-16'),
-		image: 'vega.png',
-		kaufdatum: new Date('2019-01-16'),
-		inhaber: 'Max Mustermann',
-		hersteller: 'Vega GmbH',
-		seriennummer: '123456789',
-		typ: 'Lichtmischpult',
-		zustand: 'neuwertig',
-		zustandBeschreibung: 'keine Kratzer',
-	};
-	hardware2: Hardware = {
-		id: 2,
-		modell: 'Soundcraft',
-		createdAt: new Date('2019-02-16'),
-		updatedAt: new Date('2019-02-16'),
-		image: 'vega.png',
-		kaufdatum: new Date('2019-01-16'),
-		inhaber: 'Max Mustermann',
-		hersteller: 'soundcraft Gmbh',
-		seriennummer: '123456789',
-		typ: 'Tonmischpult',
-		zustand: 'neuwertig',
-		zustandBeschreibung: 'keine Kratzer',
+	hardware: Hardware = {
+		amount: 20,
+		lights: 10,
+		sound: 10,
 	};
 
-	hardwareList: HardwareList[] = [
-		{hardware: [this.hardware1, this.hardware2]},
-	];
+	hardwareList: HardwareList[] = [];
 
 	constructor() {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.hardwareList = [
+			{
+				id: 1,
+				modell: 'Vega',
+				createdAt: new Date('2019-01-16'),
+				updatedAt: new Date('2019-01-16'),
+				image: 'vega.png',
+				kaufdatum: new Date('2019-01-16'),
+				inhaber: 'Max Mustermann',
+				hersteller: 'Vega GmbH',
+				seriennummer: '123456789',
+				typ: 'Lichtmischpult',
+				zustand: 'neuwertig',
+				zustandBeschreibung: 'keine Kratzer',
+			},
+			{
+				id: 2,
+				modell: 'Soundcraft',
+				createdAt: new Date('2019-02-16'),
+				updatedAt: new Date('2019-02-16'),
+				image: 'vega.png',
+				kaufdatum: new Date('2019-01-16'),
+				inhaber: 'Max Mustermann',
+				hersteller: 'soundcraft Gmbh',
+				seriennummer: '123456789',
+				typ: 'Tonmischpult',
+				zustand: 'neuwertig',
+				zustandBeschreibung: 'keine Kratzer',
+			},
+		];
+	}
 
 	toggle() {
 		this.hideLamps = !this.hideLamps;
