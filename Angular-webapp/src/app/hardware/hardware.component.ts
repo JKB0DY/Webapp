@@ -14,6 +14,8 @@ export class HardwareComponent implements OnInit {
 	numberOfLamps = 20;
 	hideLamps = false;
 
+	selectedHardware!: HardwareList;
+
 	hardware: Hardware = {
 		amount: 20,
 		lights: 10,
@@ -59,5 +61,10 @@ export class HardwareComponent implements OnInit {
 
 	toggle() {
 		this.hideLamps = !this.hideLamps;
+	}
+
+	selectHardware(hardware: HardwareList) {
+		this.selectedHardware = hardware;
+		console.log('Selected hardware: ', hardware);
 	}
 }

@@ -5,8 +5,18 @@
 		[innerText]="numberOfLamps"></div>
 </div>
 
-<div *ngIf="hardware.amount > 10">
-	<app-hardware-list [hardwareList]="hardwareList"></app-hardware-list>
+<div *ngIf="selectedHardware">
+	{{ selectedHardware | json }}
 </div>
 
-<button (click)="toggle()">toggle Lamps</button>
+<div *ngIf="hardware.amount > 10">
+	<app-hardware-list
+		[hardwareList]="hardwareList"
+		(selectedHardware)="selectHardware($event)"></app-hardware-list>
+</div>
+
+<button
+	class="btn btn-primary"
+	(click)="toggle()">
+	toggle Lamps
+</button>

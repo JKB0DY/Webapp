@@ -1,27 +1,37 @@
 <p>Hardware List</p>
 <!-- {{hardwareList}} -->
 <table class="table">
-	<tr>
-		<th>id</th>
-		<th>odd/even</th>
-		<th>Hardware ID</th>
-		<th>modell</th>
-		<th>typ</th>
-		<th>zustand</th>
-	</tr>
-	<tr
-		[ngClass]="e ? 'even' : 'odd'"
-		*ngFor="
-			let hardware of hardwareList;
-			let e = even;
-			let o = odd;
-			let i = index
-		">
-		<td>{{ i + 1 }}</td>
-		<td>{{ e ? "Even" : "Odd" }}</td>
-		<td>{{ hardware.id }}</td>
-		<td>{{ hardware.modell }}</td>
-		<td>{{ hardware.typ }}</td>
-		<td>{{ hardware.zustand }}</td>
-	</tr>
+	<tbody>
+		<tr>
+			<th scope="col">id</th>
+			<th scope="col">odd/even</th>
+			<th scope="col">Hardware ID</th>
+			<th scope="col">modell</th>
+			<th scope="col">typ</th>
+			<th scope="col">zustand</th>
+			<th scope="col">Hardware wählen</th>
+		</tr>
+		<tr
+			[ngClass]="e ? 'even' : 'odd'"
+			*ngFor="
+				let hardware of hardwareList;
+				let e = even;
+				let o = odd;
+				let i = index
+			">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>{{ e ? "Even" : "Odd" }}</td>
+			<td>{{ hardware.id }}</td>
+			<td>{{ hardware.modell }}</td>
+			<td>{{ hardware.typ }}</td>
+			<td>{{ hardware.zustand }}</td>
+			<td>
+				<button
+					class="btn btn-primary"
+					(click)="selectHardware(hardware)">
+					Select
+				</button>
+			</td>
+		</tr>
+	</tbody>
 </table>
