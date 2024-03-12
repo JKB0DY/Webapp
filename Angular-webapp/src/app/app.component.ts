@@ -10,7 +10,7 @@ import {HardwareComponent} from './hardware/hardware.component';
 	imports: [CommonModule, HardwareComponent],
 })
 export class AppComponent {
-	title = 'Angular-Webapp';
+	title = 'Besondere Lernleistung';
 
 	role = 'Admin';
 }

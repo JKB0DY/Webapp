@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from './hardware';
+import {HardwareListComponent} from './hardware-list/hardware-list.component';
 
 @Component({
 	selector: 'app-hardware',
 	standalone: true,
-	imports: [CommonModule],
 	templateUrl: './hardware.component.html',
 	styleUrl: './hardware.component.scss',
+	imports: [CommonModule, HardwareListComponent],
 })
 export class HardwareComponent implements OnInit {
 	numberOfLamps = 20;
