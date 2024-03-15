@@ -22,6 +22,8 @@ export class HardwareComponent implements OnInit {
 		sound: 10,
 	};
 
+	title: string = 'Hardware list';
+
 	hardwareList: HardwareList[] = [];
 
 	constructor() {}
@@ -61,10 +63,29 @@ export class HardwareComponent implements OnInit {
 
 	toggle() {
 		this.hideLamps = !this.hideLamps;
+		this.title = 'Hardware';
 	}
 
 	selectHardware(hardware: HardwareList) {
 		this.selectedHardware = hardware;
 		console.log('Selected hardware: ', hardware);
+	}
+
+	addHardware() {
+		const hardware: HardwareList = {
+			id: 3,
+			modell: 'Lightmaxx',
+			createdAt: new Date('2019-01-16'),
+			updatedAt: new Date('2019-01-16'),
+			image: 'vega.png',
+			kaufdatum: new Date('2019-01-16'),
+			inhaber: 'Max Mustermann',
+			hersteller: 'Vega GmbH',
+			seriennummer: '123456789',
+			typ: 'Lichtmischpult',
+			zustand: 'neuwertig',
+			zustandBeschreibung: 'keine Kratzer',
+		};
+		this.hardwareList = [...this.hardwareList, hardware];
 	}
 }
