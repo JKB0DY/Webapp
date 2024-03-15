@@ -12,7 +12,7 @@ import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from '../hardware';
 
 @Component({
-	selector: 'app-hardware-list',
+	selector: 'bltinv-hardware-list',
 	standalone: true,
 	imports: [CommonModule],
 	templateUrl: './hardware-list.component.html',

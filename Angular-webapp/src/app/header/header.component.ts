@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-	selector: 'app-header',
+	selector: 'bltinv-header',
 	standalone: true,
 	imports: [],
 	templateUrl: './header.component.html',

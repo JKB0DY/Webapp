@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {HardwareComponent} from './hardware/hardware.component';
 
 @Component({
-	selector: 'app-root',
+	selector: 'bltinv-root',
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',

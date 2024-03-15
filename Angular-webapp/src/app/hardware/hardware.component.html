@@ -10,10 +10,10 @@
 </div>
 
 <div *ngIf="hardware.amount > 10">
-	<app-hardware-list
+	<bltinv-hardware-list
 		[hardwareList]="hardwareList"
 		[title]="title"
-		(selectedHardware)="selectHardware($event)"></app-hardware-list>
+		(selectedHardware)="selectHardware($event)"></bltinv-hardware-list>
 </div>
 
 <div>

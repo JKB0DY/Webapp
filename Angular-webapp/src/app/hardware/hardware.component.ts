@@ -4,7 +4,7 @@ import {Hardware, HardwareList} from './hardware';
 import {HardwareListComponent} from './hardware-list/hardware-list.component';
 
 @Component({
-	selector: 'app-hardware',
+	selector: 'bltinv-hardware',
 	standalone: true,
 	templateUrl: './hardware.component.html',
 	styleUrl: './hardware.component.scss',
