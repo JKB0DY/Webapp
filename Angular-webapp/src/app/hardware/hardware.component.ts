@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from './hardware';
 import {HardwareListComponent} from './hardware-list/hardware-list.component';
@@ -10,7 +10,7 @@ import {HardwareListComponent} from './hardware-list/hardware-list.component';
 	styleUrl: './hardware.component.scss',
 	imports: [CommonModule, HardwareListComponent],
 })
-export class HardwareComponent implements OnInit, DoCheck {
+export class HardwareComponent implements OnInit {
 	numberOfLamps = 20;
 	hideLamps = false;
 
@@ -27,9 +27,6 @@ export class HardwareComponent implements OnInit, DoCheck {
 	hardwareList: HardwareList[] = [];
 
 	constructor() {}
-	ngDoCheck(): void {
-		console.log('ngDoCheck');
-	}
 
 	ngOnInit(): void {
 		this.hardwareList = [
