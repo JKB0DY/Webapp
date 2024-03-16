@@ -1,16 +1,26 @@
-import {Component, OnInit} from '@angular/core';
+import {
+	AfterViewChecked,
+	AfterViewInit,
+	Component,
+	OnInit,
+	ViewChild,
+} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from './hardware';
 import {HardwareListComponent} from './hardware-list/hardware-list.component';
+import {HeaderComponent} from '../header/header.component';
+import {After} from 'v8';
 
 @Component({
 	selector: 'bltinv-hardware',
 	standalone: true,
 	templateUrl: './hardware.component.html',
 	styleUrl: './hardware.component.scss',
-	imports: [CommonModule, HardwareListComponent],
+	imports: [CommonModule, HardwareListComponent, HeaderComponent],
 })
-export class HardwareComponent implements OnInit {
+export class HardwareComponent
+	implements OnInit, AfterViewInit, AfterViewChecked
+{
 	numberOfLamps = 20;
 	hideLamps = false;
 
@@ -26,9 +36,11 @@ export class HardwareComponent implements OnInit {
 
 	hardwareList: HardwareList[] = [];
 
+	@ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
 	constructor() {}
 
 	ngOnInit(): void {
+		// console.log(this.headerComponent);
 		this.hardwareList = [
 			{
 				id: 1,
@@ -60,6 +72,12 @@ export class HardwareComponent implements OnInit {
 			},
 		];
 	}
+
+	ngAfterViewInit(): void {
+		this.headerComponent.title = 'Hardware view';
+	}
+
+	ngAfterViewChecked(): void {}
 
 	toggle() {
 		this.hideLamps = !this.hideLamps;
