@@ -1,6 +1,8 @@
 import {
 	AfterViewInit,
 	Component,
+	ElementRef,
+	OnInit,
 	ViewChild,
 	ViewContainerRef,
 } from '@angular/core';
@@ -14,12 +16,17 @@ import {HardwareComponent} from './hardware/hardware.component';
 	styleUrl: './app.component.scss',
 	imports: [CommonModule, HardwareComponent],
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit {
 	title = 'Besondere Lernleistung';
 
-	@ViewChild('user', {read: ViewContainerRef}) vcr!: ViewContainerRef;
-
-	ngAfterViewInit() {
-		const componentRef = this.vcr.createComponent(HardwareComponent);
+	@ViewChild('name', {static: true}) name!: ElementRef;
+	ngOnInit(): void {
+		this.name.nativeElement.innerText = 'Besondere Lernleistung';
 	}
+
+	// 	@ViewChild('user', {read: ViewContainerRef}) vcr!: ViewContainerRef;
+
+	// 	ngAfterViewInit() {
+	// 		const componentRef = this.vcr.createComponent(HardwareComponent);
+	// 	}
 }
