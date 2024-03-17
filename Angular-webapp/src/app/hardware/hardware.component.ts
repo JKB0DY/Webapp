@@ -4,6 +4,7 @@ import {
 	Component,
 	OnInit,
 	QueryList,
+	SkipSelf,
 	ViewChild,
 	ViewChildren,
 } from '@angular/core';
@@ -11,6 +12,7 @@ import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from './hardware';
 import {HardwareListComponent} from './hardware-list/hardware-list.component';
 import {HeaderComponent} from '../header/header.component';
+import {HardwareService} from './services/hardware.service';
 
 @Component({
 	selector: 'bltinv-hardware',
@@ -42,40 +44,10 @@ export class HardwareComponent
 	@ViewChildren(HeaderComponent)
 	headerChildrenCompontent!: QueryList<HeaderComponent>;
 
-	constructor() {}
+	constructor(@SkipSelf() private hardwareService: HardwareService) {}
 
 	ngOnInit(): void {
-		// console.log(this.headerComponent);
-		this.hardwareList = [
-			{
-				id: 1,
-				modell: 'Vega',
-				createdAt: new Date('2019-01-16'),
-				updatedAt: new Date('2019-01-16'),
-				image: 'vega.png',
-				kaufdatum: new Date('2019-01-16'),
-				inhaber: 'Max Mustermann',
-				hersteller: 'Vega GmbH',
-				seriennummer: '123456789',
-				typ: 'Lichtmischpult',
-				zustand: 'neuwertig',
-				zustandBeschreibung: 'keine Kratzer',
-			},
-			{
-				id: 2,
-				modell: 'Soundcraft',
-				createdAt: new Date('2019-02-16'),
-				updatedAt: new Date('2019-02-16'),
-				image: 'vega.png',
-				kaufdatum: new Date('2019-01-16'),
-				inhaber: 'Max Mustermann',
-				hersteller: 'soundcraft Gmbh',
-				seriennummer: '123456789',
-				typ: 'Tonmischpult',
-				zustand: 'neuwertig',
-				zustandBeschreibung: 'keine Kratzer',
-			},
-		];
+		this.hardwareList = this.hardwareService.getHardware();
 	}
 
 	ngAfterViewInit(): void {

@@ -3,6 +3,7 @@ import {
 	Component,
 	ElementRef,
 	OnInit,
+	Optional,
 	ViewChild,
 	ViewContainerRef,
 } from '@angular/core';
@@ -10,6 +11,7 @@ import {CommonModule} from '@angular/common';
 import {HardwareComponent} from './hardware/hardware.component';
 import {ContainerComponent} from './container/container.component';
 import {VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
+import {LoggerService} from './logger.service';
 
 @Component({
 	selector: 'bltinv-root',
@@ -27,7 +29,11 @@ export class AppComponent implements OnInit {
 	title = 'Besondere Lernleistung';
 
 	@ViewChild('name', {static: true}) name!: ElementRef;
+
+	constructor(@Optional() private loggerService: LoggerService) {}
+
 	ngOnInit(): void {
+		this.loggerService?.log('AppComponent initialized');
 		this.name.nativeElement.innerText = 'Besondere Lernleistung';
 	}
 
