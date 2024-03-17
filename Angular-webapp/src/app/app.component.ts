@@ -1,4 +1,9 @@
-import {Component} from '@angular/core';
+import {
+	AfterViewInit,
+	Component,
+	ViewChild,
+	ViewContainerRef,
+} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HardwareComponent} from './hardware/hardware.component';
 
@@ -9,8 +14,12 @@ import {HardwareComponent} from './hardware/hardware.component';
 	styleUrl: './app.component.scss',
 	imports: [CommonModule, HardwareComponent],
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 	title = 'Besondere Lernleistung';
 
-	role = 'Admin';
+	@ViewChild('user', {read: ViewContainerRef}) vcr!: ViewContainerRef;
+
+	ngAfterViewInit() {
+		const componentRef = this.vcr.createComponent(HardwareComponent);
+	}
 }
