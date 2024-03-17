@@ -8,13 +8,20 @@ import {
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HardwareComponent} from './hardware/hardware.component';
+import {ContainerComponent} from './container/container.component';
+import {VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 
 @Component({
 	selector: 'bltinv-root',
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
-	imports: [CommonModule, HardwareComponent],
+	imports: [
+		CommonModule,
+		HardwareComponent,
+		ContainerComponent,
+		VeranstaltungComponent,
+	],
 })
 export class AppComponent implements OnInit {
 	title = 'Besondere Lernleistung';
