@@ -1,4 +1,13 @@
 {
+	"name": "webapp",
+	"version": "0.0.0",
+	"scripts": {
+		"server": "npm run start:dev --prefix nestjs-api-webapp",
+		"client": "npm run start --prefix Angular-webapp",
+		"prisma": "npm run start:prisma --prefix nestjs-api-webapp",
+		"start": "concurrently \"npm run server\" \"npm run client\"",
+		"start:dev": "concurrently \"npm run server\" \"npm run client\" \"npm run prisma\""
+	},
 	"devDependencies": {
 		"eslint": "^8.56.0",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
