@@ -3,13 +3,14 @@ import {
 	AfterViewInit,
 	Component,
 	OnInit,
+	QueryList,
 	ViewChild,
+	ViewChildren,
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from './hardware';
 import {HardwareListComponent} from './hardware-list/hardware-list.component';
 import {HeaderComponent} from '../header/header.component';
-import {After} from 'v8';
 
 @Component({
 	selector: 'bltinv-hardware',
@@ -37,6 +38,10 @@ export class HardwareComponent
 	hardwareList: HardwareList[] = [];
 
 	@ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
+
+	@ViewChildren(HeaderComponent)
+	headerChildrenCompontent!: QueryList<HeaderComponent>;
+
 	constructor() {}
 
 	ngOnInit(): void {
@@ -75,6 +80,11 @@ export class HardwareComponent
 
 	ngAfterViewInit(): void {
 		this.headerComponent.title = 'Hardware view';
+
+		this.headerChildrenCompontent.forEach((headerComponent) => {
+			headerComponent.title = '1';
+		});
+		this.headerChildrenCompontent.last.title = 'last title';
 	}
 
 	ngAfterViewChecked(): void {}
