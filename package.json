@@ -9,11 +9,14 @@
 		"start:dev": "concurrently \"npm run server\" \"npm run client\" \"npm run prisma\""
 	},
 	"devDependencies": {
-		"eslint": "^8.56.0",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
+		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-prettier": "^5.0.0",
 		"prettier": "^3.0.0"
+	},
+	"dependencies": {
+		"concurrently": "^8.2.2"
 	}
 }
