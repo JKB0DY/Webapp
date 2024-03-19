@@ -1,11 +1,9 @@
 import {
-	AfterViewInit,
 	Component,
 	ElementRef,
 	OnInit,
 	Optional,
 	ViewChild,
-	ViewContainerRef,
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HardwareComponent} from './hardware/hardware.component';
