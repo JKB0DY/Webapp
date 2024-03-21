@@ -6,6 +6,9 @@ async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	app.useGlobalPipes(
 		new ValidationPipe({
+			skipMissingProperties: true,
+			transform: true,
+			transformOptions: {enableImplicitConversion: true},
 			whitelist: true,
 		})
 	);
