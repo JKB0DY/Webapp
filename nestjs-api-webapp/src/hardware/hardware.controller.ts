@@ -1,4 +1,13 @@
-import {Body, Controller, Get, Post, UseGuards} from '@nestjs/common';
+import {
+	Body,
+	Controller,
+	Get,
+	HttpCode,
+	HttpStatus,
+	Post,
+	Query,
+	UseGuards,
+} from '@nestjs/common';
 import {JwtGuard} from 'src/auth/guard';
 import {HardwareService} from './hardware.service';
 import {HardwareDto} from './dto';
@@ -8,17 +17,33 @@ import {HardwareDto} from './dto';
 export class HardwareController {
 	constructor(private hardwareService: HardwareService) {}
 
+	@HttpCode(HttpStatus.CREATED)
 	@Post('create')
 	create(@Body() dto: HardwareDto) {
 		return this.hardwareService.create(dto);
 	}
 
+	@HttpCode(HttpStatus.OK)
 	@Get('all')
 	getALL() {
 		return this.hardwareService.getAll();
 	}
 
-	// @Get('one/:id')
+	@HttpCode(HttpStatus.OK)
+	@Get('')
+	getOne(@Query('id') id: number) {
+		return this.hardwareService.getOne(id);
+	}
 
-	// @Post('update/:id')
+	@HttpCode(HttpStatus.OK)
+	@Post('update')
+	update(@Query('id') id: number, @Body() dto: HardwareDto) {
+		return this.hardwareService.update(id, dto);
+	}
+
+	@HttpCode(HttpStatus.OK)
+	@Post('delete')
+	delete(@Query('id') id: number) {
+		return this.hardwareService.delete(id);
+	}
 }
