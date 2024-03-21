@@ -1,4 +1,4 @@
-import {IsNotEmpty, IsString, IsDate, IsNumber} from 'class-validator';
+import {IsNotEmpty, IsString, IsDate, IsNumber, IsUrl} from 'class-validator';
 
 export class HardwareDto {
 	@IsNotEmpty()
@@ -8,7 +8,7 @@ export class HardwareDto {
 	@IsString()
 	description: string;
 
-	@IsString()
+	@IsUrl()
 	image: string;
 
 	@IsDate()
