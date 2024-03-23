@@ -12,7 +12,7 @@ import {JwtGuard} from 'src/auth/guard';
 import {HardwareService} from './hardware.service';
 import {HardwareDto} from './dto';
 
-@UseGuards(JwtGuard)
+//@UseGuards(JwtGuard)
 @Controller('/api/hardware')
 export class HardwareController {
 	constructor(private hardwareService: HardwareService) {}

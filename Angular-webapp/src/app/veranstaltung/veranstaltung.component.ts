@@ -1,5 +1,4 @@
 import {Component, OnInit, Self} from '@angular/core';
-import {HardwareService} from '../hardware/services/hardware.service';
 
 @Component({
 	selector: 'bltinv-veranstaltung',
@@ -7,12 +6,12 @@ import {HardwareService} from '../hardware/services/hardware.service';
 	imports: [],
 	templateUrl: './veranstaltung.component.html',
 	styleUrl: './veranstaltung.component.scss',
-	providers: [HardwareService],
+	providers: [],
 })
 export class VeranstaltungComponent implements OnInit {
 	veranstaltungsname: string = 'Veranstaltung';
 
-	constructor(@Self() private hardwareService: HardwareService) {}
+	constructor() {}
 
 	ngOnInit(): void {}
 }

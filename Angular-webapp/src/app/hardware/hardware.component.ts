@@ -47,7 +47,9 @@ export class HardwareComponent
 	constructor(@SkipSelf() private hardwareService: HardwareService) {}
 
 	ngOnInit(): void {
-		this.hardwareList = this.hardwareService.getHardware();
+		this.hardwareService.getHardware().subscribe((hardwareList) => {
+			this.hardwareList = hardwareList;
+		});
 	}
 
 	ngAfterViewInit(): void {
