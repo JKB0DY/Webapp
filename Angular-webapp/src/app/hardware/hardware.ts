@@ -5,10 +5,10 @@ export interface Hardware {
 }
 
 export interface HardwareList {
-	id: number;
+	id?: number;
 	modell: string;
-	createdAt: Date;
-	updatedAt: Date;
+	createdAt?: Date;
+	updatedAt?: Date;
 	image?: String;
 	kaufdatum?: Date;
 	inhaber?: String;
