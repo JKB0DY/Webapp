@@ -1,6 +1,7 @@
 import {
 	Body,
 	Controller,
+	Delete,
 	Get,
 	HttpCode,
 	HttpStatus,
@@ -42,7 +43,7 @@ export class HardwareController {
 	}
 
 	@HttpCode(HttpStatus.OK)
-	@Post('delete')
+	@Delete('delete')
 	delete(@Query('id') id: number) {
 		return this.hardwareService.delete(id);
 	}
