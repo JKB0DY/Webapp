@@ -20,4 +20,19 @@ export class HardwareService {
 	getHardware() {
 		return this.http.get<HardwareList[]>('/api/hardware/all');
 	}
+
+	addHardware(hardware: HardwareList) {
+		return this.http.post<HardwareList>('/api/hardware/create', hardware);
+	}
+
+	updateHardware(hardware: HardwareList) {
+		return this.http.post<HardwareList>(
+			`/api/hardware/update?id=${hardware.id}`,
+			hardware
+		);
+	}
+
+	deleteHardware(hardwareID: number) {
+		return this.http.delete(`/api/hardware/delete?id=${hardwareID}`);
+	}
 }
