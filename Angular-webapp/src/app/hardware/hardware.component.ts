@@ -11,7 +11,6 @@ import {
 import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from './hardware';
 import {HardwareListComponent} from './hardware-list/hardware-list.component';
-import {HeaderComponent} from '../header/header.component';
 import {HardwareService} from './services/hardware.service';
 import {Observable} from 'rxjs';
 
@@ -20,7 +19,7 @@ import {Observable} from 'rxjs';
 	standalone: true,
 	templateUrl: './hardware.component.html',
 	styleUrl: './hardware.component.scss',
-	imports: [CommonModule, HardwareListComponent, HeaderComponent],
+	imports: [CommonModule, HardwareListComponent],
 })
 export class HardwareComponent
 	implements OnInit, AfterViewInit, AfterViewChecked
@@ -45,11 +44,6 @@ export class HardwareComponent
 		observer.next('user2');
 		observer.complete();
 	});
-
-	@ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
-
-	@ViewChildren(HeaderComponent)
-	headerChildrenCompontent!: QueryList<HeaderComponent>;
 
 	constructor(@SkipSelf() private hardwareService: HardwareService) {}
 
