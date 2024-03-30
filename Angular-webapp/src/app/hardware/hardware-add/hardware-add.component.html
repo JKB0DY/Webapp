@@ -1,1 +1,142 @@
-<p>hardware-add works!</p>
+<h1>Add Hardware</h1>
+<h2>{{ msg }}</h2>
+<form (ngSubmit)="addHardware()">
+	<div class="form-group">
+		<label for="hardwareModell">Modell:</label>
+		<input
+			name="hardwareModell"
+			type="text"
+			class="form-control"
+			id="hardwareModell"
+			placeholder="Enter hardware Modell"
+			[(ngModel)]="hardware.modell" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareImage">Bild Link:</label>
+		<input
+			name="hardwareImage"
+			type="text"
+			class="form-control"
+			id="hardwareImage"
+			placeholder="Enter hardware Image Link"
+			[(ngModel)]="hardware.image" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareKaufdatum">Kaufdatum:</label>
+		<input
+			name="hardwareKaufdatum"
+			type="date"
+			class="form-control"
+			id="hardwareKaufdatum"
+			placeholder="Enter Kaufdatum (Format: YYYY-MM-DD)"
+			[(ngModel)]="hardware.kaufdatum" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareInhaber">Inhaber:</label>
+		<select
+			name="hardwareInhaber"
+			class="form-control"
+			id="hardwareInhaber"
+			[(ngModel)]="hardware.inhaber">
+			<option value="">Choose Inhaber</option>
+			<option value="Abtei Gymnasium Brauweiler">
+				Abtei Gymnasium Brauweiler
+			</option>
+			<option value="Gesamtschule Pulheim">Gesamtschule Pulheim</option>
+			<option value="Beide Schulen">Beide Schulen</option>
+		</select>
+		<div
+			*ngIf="hardware.inhaber === ''"
+			class="text-danger">
+			Please choose an Inhaber
+		</div>
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareHersteller">Hersteller:</label>
+		<input
+			name="hardwareHersteller"
+			type="text"
+			class="form-control"
+			id="hardwareHersteller"
+			placeholder="Enter Hersteller"
+			[(ngModel)]="hardware.hersteller" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareSeriennummer">Seriennummer:</label>
+		<input
+			name="hardwareSeriennummer"
+			type="text"
+			class="form-control"
+			id="hardwareSeriennummer"
+			placeholder="Enter Seriennummer"
+			[(ngModel)]="hardware.seriennummer" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareTyp">Typ:</label>
+		<input
+			name="hardwareTyp"
+			type="text"
+			class="form-control"
+			id="hardwareTyp"
+			placeholder="Enter Typ"
+			[(ngModel)]="hardware.typ" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareZustand">Zustand:</label>
+		<input
+			name="hardwareZustand"
+			type="text"
+			class="form-control"
+			id="hardwareZustand"
+			placeholder="Enter Zustand"
+			[(ngModel)]="hardware.zustand" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="hardwareZustandsbeschreibung">Zustandsbeschreibung:</label>
+		<input
+			name="hardwareZustandsbeschreibung"
+			type="text"
+			class="form-control"
+			id="hardwareZustandsbeschreibung"
+			placeholder="Enter Zustandsbeschreibung"
+			[(ngModel)]="hardware.zustandBeschreibung" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="zustandDatum">Zustand Datum:</label>
+		<input
+			name="zustandDatum"
+			type="date"
+			class="form-control"
+			id="zustandDatum"
+			placeholder="Enter Zustand Datum"
+			[(ngModel)]="hardware.zustandDatum" />
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="prufDatum">Prüf Datum:</label>
+		<input
+			name="prufDatum"
+			type="date"
+			class="form-control"
+			id="prufDatum"
+			placeholder="Enter Prüf Datum"
+			[(ngModel)]="hardware.pruefungsDatum" />
+	</div>
+	<br />
+	<div>
+		<button
+			type="submit"
+			class="btn btn-primary">
+			Submit
+		</button>
+	</div>
+</form>

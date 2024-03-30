@@ -3,6 +3,7 @@ import {HardwareList} from '../hardware';
 import {APP_SERVICE_CONFIG} from '../../AppConfig/appconfig.service';
 import {AppConfig} from '../../AppConfig/appconfig.interface';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
@@ -26,7 +27,17 @@ export class HardwareService {
 	}
 
 	addHardware(hardware: HardwareList) {
-		return this.http.post<HardwareList>('/api/hardware/create', hardware);
+		if (hardware.modell === '') {
+			console.log(hardware);
+			throw new Error('Modell is required');
+		} else if (hardware.modell === undefined) {
+			throw new Error('Modell is required');
+		} else {
+			return this.http.post<HardwareList>(
+				'/api/hardware/create',
+				hardware
+			);
+		}
 	}
 
 	updateHardware(hardware: HardwareList) {

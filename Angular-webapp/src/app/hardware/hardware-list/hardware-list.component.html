@@ -1,36 +1,28 @@
 <h2>{{ title }}</h2>
-<!-- {{hardwareList}} -->
+
+<div>
+	<button
+		class="btn btn-primary"
+		[routerLink]="['/hardwarelist/add']">
+		Add Hardware
+	</button>
+</div>
+
 <table class="table">
 	<tbody>
 		<tr>
-			<th scope="col">id</th>
-			<th scope="col">odd/even</th>
-			<th scope="col">Hardware ID</th>
+			<th scope="col">Hardware Backend ID</th>
 			<th scope="col">modell</th>
 			<th scope="col">typ</th>
 			<th scope="col">zustand</th>
 			<th scope="col">Hardware wählen</th>
 		</tr>
-		<tr
-			[ngClass]="e ? 'even' : 'odd'"
-			*ngFor="
-				let hardware of hardwareList;
-				let e = even;
-				let o = odd;
-				let i = index
-			">
-			<th scope="row">{{ i + 1 }}</th>
-			<td>{{ e ? "Even" : "Odd" }}</td>
+		<tr *ngFor="let hardware of hardwareList">
 			<td>{{ hardware.id }}</td>
 			<td>{{ hardware.modell }}</td>
 			<td>{{ hardware.typ }}</td>
 			<td>{{ hardware.zustand }}</td>
 			<td>
-				<!-- <button
-					class="btn btn-primary"
-					(click)="selectHardware(hardware)">
-					Select
-				</button> -->
 				<button
 					class="btn btn-primary"
 					[routerLink]="['/hardwarelist', hardware.id]">
