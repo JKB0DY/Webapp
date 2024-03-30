@@ -17,6 +17,10 @@ export class HardwareService {
 		console.log('HardwareService created');
 	}
 
+	getHardwareById(id: number) {
+		return this.http.get<HardwareList>(`/api/hardware?id=${id}`);
+	}
+
 	getHardware() {
 		return this.http.get<HardwareList[]>('/api/hardware/all');
 	}
