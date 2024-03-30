@@ -10,6 +10,7 @@ import {HardwareComponent} from './hardware/hardware.component';
 import {ContainerComponent} from './container/container.component';
 import {VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 import {LoggerService} from './logger.service';
+import {RouterModule} from '@angular/router';
 
 @Component({
 	selector: 'bltinv-root',
@@ -17,6 +18,7 @@ import {LoggerService} from './logger.service';
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
 	imports: [
+		RouterModule,
 		CommonModule,
 		HardwareComponent,
 		ContainerComponent,

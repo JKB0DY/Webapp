@@ -1,5 +1,5 @@
-<bltinv-hardware></bltinv-hardware>
-<bltinv-veranstaltung></bltinv-veranstaltung>
+<!-- <bltinv-hardware></bltinv-hardware> -->
+<!-- <bltinv-veranstaltung></bltinv-veranstaltung> -->
 
 <!-- <bltinv-container>
 	<bltinv-hardware></bltinv-hardware>
@@ -7,7 +7,7 @@
 	<h1>this is from ng container</h1>
 </bltinv-container>-->
 
-<div #name></div>
+<!-- <div #name></div> -->
 
 <!-- <div [ngSwitch]="role">
 	<div *ngSwitchCase="'User'">Welcome User!</div>
@@ -20,3 +20,8 @@
 <!-- <div>
 	<ng-template #user></ng-template>
 </div> -->
+<nav>
+	<a [routerLink]="['/hardware']">Hardware </a>
+	<a [routerLink]="['/veranstaltung']">veranstaltung </a>
+</nav>
+<router-outlet></router-outlet>
