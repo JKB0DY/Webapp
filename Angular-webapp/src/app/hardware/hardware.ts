@@ -1,9 +1,3 @@
-export interface Hardware {
-	amount: number;
-	lights: number;
-	sound: number;
-}
-
 export interface HardwareList {
 	id?: number;
 	modell?: string;

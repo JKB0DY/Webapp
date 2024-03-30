@@ -1,46 +1,15 @@
-<div class="title">
-	<h1>{{ title }}</h1>
-</div>
-
-<div [hidden]="hideLamps">
-	<div
-		[ngStyle]="{color: numberOfLamps > 0 ? 'steelblue' : 'red'}"
-		[innerText]="numberOfLamps"></div>
-</div>
-
-<div *ngIf="selectedHardware">
-	{{ selectedHardware | json }}
-</div>
-
-<div *ngIf="hardware.amount > 10">
+<div>
 	<bltinv-hardware-list
 		[hardwareList]="hardwareList"
-		[title]="title"
-		(selectedHardware)="selectHardware($event)"></bltinv-hardware-list>
+		[title]="title"></bltinv-hardware-list>
 </div>
+
+<br />
 
 <div>
 	<button
 		class="btn btn-primary"
 		(click)="addHardware()">
-		Add Hardware
+		Add Hardware Fast
 	</button>
 </div>
-
-<button
-	class="btn btn-primary"
-	(click)="toggle()">
-	toggle Lamps
-</button>
-
-<button
-	class="btn btn-primary"
-	(click)="updateHardware()">
-	update Hardware
-</button>
-
-<button
-	class="btn btn-primary"
-	(click)="deleteHardware()">
-	delete Hardware
-</button>
