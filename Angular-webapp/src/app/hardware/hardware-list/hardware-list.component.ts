@@ -2,14 +2,12 @@ import {
 	Component,
 	OnInit,
 	Input,
-	Output,
-	EventEmitter,
 	ChangeDetectionStrategy,
 	OnChanges,
 	SimpleChanges,
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Hardware, HardwareList} from '../hardware';
+import {HardwareList} from '../hardware';
 import {RouterModule} from '@angular/router';
 
 @Component({
@@ -25,16 +23,8 @@ export class HardwareListComponent implements OnInit, OnChanges {
 
 	@Input() title: string = '';
 
-	@Output() selectedHardware = new EventEmitter<HardwareList>();
-
 	constructor() {}
-	ngOnChanges(changes: SimpleChanges): void {
-		console.log(changes);
-	}
+	ngOnChanges(changes: SimpleChanges): void {}
 
 	ngOnInit(): void {}
-
-	selectHardware(hardware: HardwareList) {
-		this.selectedHardware.emit(hardware);
-	}
 }
