@@ -6,6 +6,7 @@ import {routes} from './app.routes';
 import {provideClientHydration} from '@angular/platform-browser';
 import {APP_CONFIG, APP_SERVICE_CONFIG} from './AppConfig/appconfig.service';
 import {requestInterceptor} from './request.interceptor';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
 	providers: [
@@ -13,5 +14,6 @@ export const appConfig: ApplicationConfig = {
 		provideHttpClient(withInterceptors([requestInterceptor])),
 		provideClientHydration(),
 		{provide: APP_SERVICE_CONFIG, useValue: APP_CONFIG},
+		provideAnimationsAsync(),
 	],
 };
