@@ -26,9 +26,14 @@
 			<td>{{ hardware.typ }}</td>
 			<td>{{ hardware.zustand }}</td>
 			<td>
-				<button
+				<!-- <button
 					class="btn btn-primary"
 					(click)="selectHardware(hardware)">
+					Select
+				</button> -->
+				<button
+					class="btn btn-primary"
+					[routerLink]="['/hardwarelist', hardware.id]">
 					Select
 				</button>
 			</td>

@@ -6,7 +6,7 @@ export interface Hardware {
 
 export interface HardwareList {
 	id?: number;
-	modell: string;
+	modell?: string;
 	createdAt?: Date;
 	updatedAt?: Date;
 	image?: String;

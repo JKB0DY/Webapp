@@ -10,11 +10,12 @@ import {
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Hardware, HardwareList} from '../hardware';
+import {RouterModule} from '@angular/router';
 
 @Component({
 	selector: 'bltinv-hardware-list',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, RouterModule],
 	templateUrl: './hardware-list.component.html',
 	styleUrl: './hardware-list.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
