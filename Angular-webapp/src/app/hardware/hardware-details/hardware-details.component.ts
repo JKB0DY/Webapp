@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterModule} from '@angular/router';
 import {Observable, map} from 'rxjs';
 import {HardwareService} from '../services/hardware.service';
 import {HardwareList} from '../hardware';
@@ -8,7 +8,7 @@ import {HardwareList} from '../hardware';
 @Component({
 	selector: 'bltinv-hardware-details',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, RouterModule],
 	templateUrl: './hardware-details.component.html',
 	styleUrl: './hardware-details.component.scss',
 })
