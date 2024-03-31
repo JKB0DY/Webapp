@@ -4,11 +4,12 @@ import {HardwareList} from '../hardware';
 import {CommonModule} from '@angular/common';
 import {HardwareService} from '../services/hardware.service';
 import {Router} from '@angular/router';
+import {NgbAlert} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'bltinv-hardware-add',
 	standalone: true,
-	imports: [FormsModule, CommonModule],
+	imports: [FormsModule, CommonModule, NgbAlert],
 	templateUrl: './hardware-add.component.html',
 	styleUrl: './hardware-add.component.scss',
 })
