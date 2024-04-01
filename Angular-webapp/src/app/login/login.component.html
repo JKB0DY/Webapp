@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div id="main">
+	<form (ngSubmit)="login()">
+		<div class="form-group">
+			<input
+				placeholder="Email"
+				type="text"
+				class="form-control"
+				id="username"
+				[(ngModel)]="username"
+				name="username"
+				required />
+		</div>
+		<br />
+		<div class="form-group">
+			<input
+				placeholder="Password"
+				type="password"
+				class="form-control"
+				id="password"
+				[(ngModel)]="password"
+				name="password"
+				required />
+		</div>
+		<br />
+		<div>
+			<button
+				type="submit"
+				class="btn btn-primary">
+				Login
+			</button>
+		</div>
+	</form>
+	<ngb-alert
+		[dismissible]="false"
+		*ngIf="msg"
+		[type]="'danger'">
+		{{ msg }}
+	</ngb-alert>
+</div>
