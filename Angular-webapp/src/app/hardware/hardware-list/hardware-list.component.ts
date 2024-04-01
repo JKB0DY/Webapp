@@ -9,6 +9,7 @@ import {
 import {CommonModule} from '@angular/common';
 import {HardwareList} from '../hardware';
 import {RouterModule} from '@angular/router';
+import {HardwareService} from '../services/hardware.service';
 
 @Component({
 	selector: 'bltinv-hardware-list',
@@ -23,8 +24,20 @@ export class HardwareListComponent implements OnInit, OnChanges {
 
 	@Input() title: string = '';
 
-	constructor() {}
-	ngOnChanges(changes: SimpleChanges): void {}
+	constructor(private hardwareService: HardwareService) {
+		this.getHardware();
+	}
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes['hardwareList']) {
+			this.getHardware();
+		}
+	}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.getHardware();
+	}
+
+	getHardware() {
+		this.hardwareList = this.hardwareService.getHardware();
+	}
 }

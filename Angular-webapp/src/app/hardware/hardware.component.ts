@@ -27,14 +27,16 @@ export class HardwareComponent
 	constructor(@SkipSelf() private hardwareService: HardwareService) {}
 
 	ngOnInit(): void {
-		this.hardwareService.getHardware().subscribe((hardwareList) => {
-			this.hardwareList = hardwareList;
-		});
+		this.getHardware();
 	}
 
 	ngAfterViewInit(): void {}
 
 	ngAfterViewChecked(): void {}
+
+	getHardware() {
+		this.hardwareList = this.hardwareService.getHardware();
+	}
 
 	addHardware() {
 		// Fast way to add a new hardware for testing purposes only
