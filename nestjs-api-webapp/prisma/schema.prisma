@@ -21,7 +21,8 @@ model User {
     firstName String?
     lastName  String?
 
-    hardware Hardware[]
+    hardware      Hardware[]
+    Veranstaltung Veranstaltung[]
 
     @@map("users")
 }
@@ -31,20 +32,54 @@ model Hardware {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    modell              String
-    description         String?
-    image               String?
-    kaufdatum           DateTime?
-    inhaber             String?
-    hersteller          String?
-    seriennummer        String?
-    typ                 String?
-    zustand             String?
-    zustandBeschreibung String?
-    zustandDatum        DateTime?
-    zustandUserID       Int?
-    zustandUser         User?     @relation(fields: [zustandUserID], references: [id], onDelete: SetNull)
-    pruefungsDatum      DateTime?
+    modell                String
+    description           String?
+    image                 String?
+    kaufdatum             DateTime?
+    inhaber               String?
+    hersteller            String?
+    seriennummer          String?
+    typ                   String?
+    zustand               String?
+    zustandBeschreibung   String?
+    zustandDatum          DateTime?
+    zustandUserID         Int?
+    zustandUser           User?                   @relation(fields: [zustandUserID], references: [id], onDelete: SetNull)
+    pruefungsDatum        DateTime?
+    veranstaltungHardware VeranstaltungHardware[]
 
     @@map("hardware")
+}
+
+model Veranstaltung {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    name                  String
+    beschreibung          String?
+    aufbauStart           DateTime?
+    startDatum            DateTime
+    endDatum              DateTime
+    abbauEnde             DateTime?
+    ort                   String?
+    veranstalter          String?
+    teilnehmer            String?
+    teilnehmerAnzahl      Int?
+    erstelltVon           Int?
+    erstelltVonUser       User?                   @relation(fields: [erstelltVon], references: [id], onDelete: SetNull)
+    veranstaltungHardware VeranstaltungHardware[]
+
+    @@map("veranstaltungen")
+}
+
+model VeranstaltungHardware {
+    veranstaltungID Int
+    veranstaltung   Veranstaltung @relation(fields: [veranstaltungID], references: [id], onDelete: Cascade)
+
+    hardwareID Int
+    hardware   Hardware @relation(fields: [hardwareID], references: [id], onDelete: Cascade)
+
+    @@id([veranstaltungID, hardwareID])
+    @@map("veranstaltung_hardware")
 }
