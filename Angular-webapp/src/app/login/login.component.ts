@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
 				} else {
 					this.msg =
 						'Your username and/or password is incorrect. Please try again.';
+					this.username = '';
+					this.password = '';
 				}
 			});
 	}
