@@ -15,10 +15,7 @@ export class HardwareService {
 		@Inject(APP_SERVICE_CONFIG) private config: AppConfig,
 		private http: HttpClient,
 		private router: Router
-	) {
-		console.log(this.config.apiEndpoint);
-		console.log('HardwareService created');
-	}
+	) {}
 
 	getHardwareById(id: number) {
 		return this.http.get<HardwareList>(`/api/hardware?id=${id}`).pipe(

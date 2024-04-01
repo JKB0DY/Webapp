@@ -1,1 +1,42 @@
-<p>veranstaltung-list works!</p>
+<div id="main">
+	<h2>{{ title }}</h2>
+
+	<div>
+		<button
+			class="btn btn-primary"
+			[routerLink]="['/veranstaltunglist/add']">
+			Add Hardware
+		</button>
+		<button
+			class="btn btn-primary"
+			(click)="getVeranstaltung()">
+			Refresh Hardware
+		</button>
+	</div>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th scope="col">Veranstaltung Backend ID</th>
+				<th scope="col">name</th>
+				<th scope="col">Veranstaltungs Zeitraum</th>
+				<th scope="col">Veranstaltung wählen</th>
+			</tr>
+			<tr *ngFor="let veranstaltung of veranstaltungList">
+				<td>{{ veranstaltung.id }}</td>
+				<td>{{ veranstaltung.name }}</td>
+				<td>
+					{{ veranstaltung.startDatum }} bis
+					{{ veranstaltung.endDatum }}
+				</td>
+				<td>
+					<button
+						class="btn btn-primary"
+						[routerLink]="['/veranstaltungList', veranstaltung.id]">
+						Select
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

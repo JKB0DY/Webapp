@@ -1,3 +1,15 @@
-<p>veranstaltung works!</p>
+<div>
+	<bltinv-veranstaltung-list
+		[veranstaltungList]="veranstaltungList"
+		[title]="title"></bltinv-veranstaltung-list>
+</div>
 
-{{ veranstaltungsname }}
+<br />
+
+<div>
+	<button
+		class="btn btn-primary"
+		(click)="addVeranstaltung()">
+		Add Veranstaltung Fast
+	</button>
+</div>
