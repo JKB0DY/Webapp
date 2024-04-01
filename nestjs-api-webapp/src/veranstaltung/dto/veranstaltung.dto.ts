@@ -1,5 +1,4 @@
-import {IsString, IsDate, IsNumber, IsArray, IsNotEmpty} from 'class-validator';
-import {HardwareDto} from 'src/hardware/dto';
+import {IsString, IsDate, IsNumber, IsNotEmpty} from 'class-validator';
 
 export class VeranstaltungDto {
 	@IsNotEmpty()
@@ -37,7 +36,4 @@ export class VeranstaltungDto {
 
 	@IsNumber()
 	erstelltVon: number;
-
-	@IsArray()
-	veranstaltungHardware: Array<HardwareDto>;
 }
