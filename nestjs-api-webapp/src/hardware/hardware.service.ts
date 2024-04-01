@@ -7,7 +7,7 @@ import {Hardware} from '@prisma/client';
 export class HardwareService {
 	constructor(private prisma: PrismaService) {}
 
-	async create(dto: HardwareDto) {
+	async create(dto: HardwareDto): Promise<Hardware> {
 		try {
 			const hardware = await this.prisma.hardware.create({
 				data: dto,
