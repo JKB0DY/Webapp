@@ -49,8 +49,13 @@
 	<div id="buttons">
 		<button
 			class="btn btn-primary"
-			[routerLink]="['/hardware/edit', hardware.id]">
+			[routerLink]="['/hardwarelist/edit', hardware.id]">
 			Bearbeiten
+		</button>
+		<button
+			class="btn btn-danger"
+			(click)="deleteHardware()">
+			Löschen
 		</button>
 	</div>
 </div>

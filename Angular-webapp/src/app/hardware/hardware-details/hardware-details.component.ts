@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, RouterModule} from '@angular/router';
-import {Observable, map} from 'rxjs';
+import {ActivatedRoute, Router, RouterModule} from '@angular/router';
+import {map} from 'rxjs';
 import {HardwareService} from '../services/hardware.service';
 import {HardwareList} from '../hardware';
 
@@ -13,13 +13,14 @@ import {HardwareList} from '../hardware';
 	styleUrl: './hardware-details.component.scss',
 })
 export class HardwareDetailsComponent implements OnInit {
-	id$ = this.router.paramMap.pipe(
+	id$ = this.route.paramMap.pipe(
 		map((params) => parseInt(params.get('id') || '0'))
 	);
 	hardware: HardwareList = {modell: ''};
 
 	constructor(
-		private router: ActivatedRoute,
+		private route: ActivatedRoute,
+		private router: Router,
 		private hardwareService: HardwareService
 	) {}
 
@@ -27,6 +28,16 @@ export class HardwareDetailsComponent implements OnInit {
 		this.id$.subscribe((id) => {
 			this.hardwareService.getHardwareById(id).subscribe((hardware) => {
 				this.hardware = hardware;
+				this.hardware.id = id;
+			});
+		});
+	}
+
+	deleteHardware() {
+		this.id$.subscribe((id) => {
+			this.hardwareService.deleteHardware(id).subscribe(() => {
+				console.log('Hardware deleted');
+				this.router.navigate(['/hardwarelist']);
 			});
 		});
 	}
