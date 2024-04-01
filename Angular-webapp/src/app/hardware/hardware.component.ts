@@ -57,44 +57,4 @@ export class HardwareComponent
 			}
 		});
 	}
-
-	updateHardware() {
-		// const hardware: HardwareList = {
-		// 	// id: 3,
-		// 	modell: 'Lightmaxx yolo',
-		// 	image: 'vega.png',
-		// 	kaufdatum: new Date('2019-01-16'),
-		// 	inhaber: 'Max Mustermann',
-		// 	hersteller: 'Vega GmbH',
-		// 	seriennummer: '123456789',
-		// 	typ: 'Lichtmischpult',
-		// 	zustand: 'neuwertig',
-		// 	zustandBeschreibung: 'keine Kratzer',
-		// };
-		// if (this.selectedHardware) {
-		// 	const index = this.hardwareList.findIndex(
-		// 		(item) => item.id === this.selectedHardware.id
-		// 	);
-		// 	hardware.id = this.selectedHardware.id;
-		// 	this.hardwareService.updateHardware(hardware).subscribe((data) => {
-		// 		this.hardwareList.splice(index, 1, data);
-		// 		this.hardwareList = [...this.hardwareList];
-		// 	});
-		// } else {
-		// 	console.log('No hardware selected');
-		// }
-	}
-
-	deleteHardware() {
-		// if (this.selectedHardware) {
-		// 	const selectedId = this.selectedHardware.id || -1;
-		// 	this.hardwareService.deleteHardware(selectedId).subscribe(() => {
-		// 		this.hardwareList = this.hardwareList.filter(
-		// 			(item) => item.id !== selectedId
-		// 		);
-		// 	});
-		// } else {
-		// 	console.log('No hardware selected');
-		// }
-	}
 }
