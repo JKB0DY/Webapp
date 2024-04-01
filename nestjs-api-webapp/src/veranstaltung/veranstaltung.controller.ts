@@ -7,10 +7,13 @@ import {
 	HttpStatus,
 	Post,
 	Query,
+	UseGuards,
 } from '@nestjs/common';
+import {JwtGuard} from 'src/auth/guard';
 import {VeranstaltungService} from './veranstaltung.service';
 import {VeranstaltungDto} from './dto';
 
+// @UseGuards(JwtGuard)
 @Controller('api/veranstaltung')
 export class VeranstaltungController {
 	constructor(private veranstaltungService: VeranstaltungService) {}
