@@ -1,5 +1,4 @@
 import {Routes} from '@angular/router';
-import {HardwareComponent} from './hardware/hardware.component';
 import {VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {HardwareDetailsComponent} from './hardware/hardware-details/hardware-details.component';
@@ -9,10 +8,11 @@ import {LoginComponent} from './login/login.component';
 import {VeranstaltungAddComponent} from './veranstaltung/veranstaltung-add/veranstaltung-add.component';
 import {VeranstaltungUpdateComponent} from './veranstaltung/veranstaltung-update/veranstaltung-update.component';
 import {VeranstaltungDetailsComponent} from './veranstaltung/veranstaltung-details/veranstaltung-details.component';
+import {HardwareListComponent} from './hardware/hardware-list/hardware-list.component';
 
 export const routes: Routes = [
 	{path: 'login', component: LoginComponent},
-	{path: 'hardwarelist', component: HardwareComponent},
+	{path: 'hardwarelist', component: HardwareListComponent},
 	{path: 'hardwarelist/add', component: HardwareAddComponent},
 	{path: 'hardwarelist/edit/:id', component: HardwareUpdateComponent},
 	{path: 'hardwarelist/:id', component: HardwareDetailsComponent},

@@ -1,15 +1,5 @@
-import {
-	Component,
-	ElementRef,
-	OnInit,
-	Optional,
-	ViewChild,
-} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HardwareComponent} from './hardware/hardware.component';
-import {ContainerComponent} from './container/container.component';
-import {VeranstaltungComponent} from './veranstaltung/veranstaltung.component';
-import {LoggerService} from './logger.service';
 import {AppNavComponent} from './app-nav/app-nav.component';
 
 @Component({
@@ -17,29 +7,10 @@ import {AppNavComponent} from './app-nav/app-nav.component';
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
-	imports: [
-		CommonModule,
-		HardwareComponent,
-		ContainerComponent,
-		VeranstaltungComponent,
-		AppNavComponent,
-	],
+	imports: [CommonModule, AppNavComponent],
 })
 export class AppComponent implements OnInit {
-	// title = 'Besondere Lernleistung';
+	constructor() {}
 
-	// @ViewChild('name', {static: true}) name!: ElementRef;
-
-	constructor(@Optional() private loggerService: LoggerService) {}
-
-	ngOnInit(): void {
-		this.loggerService?.log('AppComponent initialized');
-		// this.name.nativeElement.innerText = 'Besondere Lernleistung';
-	}
-
-	// 	@ViewChild('user', {read: ViewContainerRef}) vcr!: ViewContainerRef;
-
-	// 	ngAfterViewInit() {
-	// 		const componentRef = this.vcr.createComponent(HardwareComponent);
-	// 	}
+	ngOnInit(): void {}
 }

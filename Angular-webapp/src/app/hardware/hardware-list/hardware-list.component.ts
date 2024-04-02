@@ -20,24 +20,43 @@ import {HardwareService} from '../services/hardware.service';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HardwareListComponent implements OnInit, OnChanges {
-	@Input() hardwareList: HardwareList[] = [];
+	hardwareList: HardwareList[] = [];
 
-	@Input() title: string = '';
+	title: string = 'Hardware list';
 
-	constructor(private hardwareService: HardwareService) {
-		this.getHardware();
-	}
+	constructor(private hardwareService: HardwareService) {}
+
 	ngOnChanges(changes: SimpleChanges): void {
 		if (changes['hardwareList']) {
-			this.getHardware();
+			this.hardwareList = this.getHardware();
 		}
 	}
 
 	ngOnInit(): void {
-		this.getHardware();
+		this.hardwareList = this.getHardware();
 	}
 
-	getHardware() {
-		this.hardwareList = this.hardwareService.getHardware();
+	getHardware(): HardwareList[] {
+		return this.hardwareService.getHardware();
+	}
+
+	addHardware() {
+		// Fast way to add a new hardware for testing purposes only
+		const hardware: HardwareList = {
+			modell: 'Lightmax',
+			image: 'vega.png',
+			kaufdatum: new Date('2019-01-16'),
+			inhaber: 'Max Mustermann',
+			hersteller: 'Vega GmbH',
+			seriennummer: '123456789',
+			typ: 'Lichtmischpult',
+			zustand: 'neuwertig',
+			zustandBeschreibung: 'keine Kratzer',
+		};
+		this.hardwareService.addHardware(hardware).subscribe((data) => {
+			if (data) {
+				this.hardwareList = [...this.hardwareList, data];
+			}
+		});
 	}
 }
