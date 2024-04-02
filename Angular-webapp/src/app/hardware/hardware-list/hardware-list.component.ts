@@ -1,11 +1,4 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	ChangeDetectionStrategy,
-	OnChanges,
-	SimpleChanges,
-} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HardwareList} from '../hardware';
 import {RouterModule} from '@angular/router';
@@ -17,27 +10,24 @@ import {HardwareService} from '../services/hardware.service';
 	imports: [CommonModule, RouterModule],
 	templateUrl: './hardware-list.component.html',
 	styleUrl: './hardware-list.component.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HardwareListComponent implements OnInit, OnChanges {
+export class HardwareListComponent implements OnInit {
 	hardwareList: HardwareList[] = [];
 
 	title: string = 'Hardware list';
 
 	constructor(private hardwareService: HardwareService) {}
 
-	ngOnChanges(changes: SimpleChanges): void {
-		if (changes['hardwareList']) {
-			this.hardwareList = this.getHardware();
-		}
-	}
-
 	ngOnInit(): void {
-		this.hardwareList = this.getHardware();
+		this.getHardware();
 	}
 
-	getHardware(): HardwareList[] {
-		return this.hardwareService.getHardware();
+	getHardware(): void {
+		this.hardwareService.getHardware().subscribe((data) => {
+			if (data) {
+				this.hardwareList = [...data];
+			}
+		});
 	}
 
 	addHardware() {
@@ -55,7 +45,7 @@ export class HardwareListComponent implements OnInit, OnChanges {
 		};
 		this.hardwareService.addHardware(hardware).subscribe((data) => {
 			if (data) {
-				this.hardwareList = [...this.hardwareList, data];
+				this.getHardware();
 			}
 		});
 	}

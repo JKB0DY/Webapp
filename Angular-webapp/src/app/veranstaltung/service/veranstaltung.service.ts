@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
 	providedIn: 'root',
 })
 export class VeranstaltungService {
-	veranstaltungList: VeranstaltungList[] = [];
 	constructor(
 		@Inject(APP_SERVICE_CONFIG) private config: AppConfig,
 		private http: HttpClient,
@@ -29,17 +28,13 @@ export class VeranstaltungService {
 	}
 
 	getVeranstaltung() {
-		this.http
+		return this.http
 			.get<VeranstaltungList[]>('/api/veranstaltung/all')
 			.pipe(
 				catchError((err) => {
 					return of({} as VeranstaltungList[]);
 				})
-			)
-			.subscribe((VeranstaltungList) => {
-				this.veranstaltungList = VeranstaltungList;
-			});
-		return this.veranstaltungList;
+			);
 	}
 
 	addVeranstaltung(veranstaltung: VeranstaltungList) {

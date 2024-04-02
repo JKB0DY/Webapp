@@ -27,17 +27,11 @@ export class HardwareService {
 	}
 
 	getHardware() {
-		this.http
-			.get<HardwareList[]>('/api/hardware/all')
-			.pipe(
-				catchError((err) => {
-					return of({} as HardwareList[]);
-				})
-			)
-			.subscribe((hardwareList) => {
-				this.hardwareList = hardwareList;
-			});
-		return this.hardwareList;
+		return this.http.get<HardwareList[]>('/api/hardware/all').pipe(
+			catchError((err) => {
+				return of({} as HardwareList[]);
+			})
+		);
 	}
 
 	addHardware(hardware: HardwareList) {
