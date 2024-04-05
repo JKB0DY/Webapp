@@ -5,6 +5,7 @@ import {AppConfig} from '../../AppConfig/appconfig.interface';
 import {HttpClient} from '@angular/common/http';
 import {Observable, catchError, of} from 'rxjs';
 import {Router} from '@angular/router';
+import {HardwareList} from '../../hardware/hardware';
 
 @Injectable({
 	providedIn: 'root',
@@ -72,6 +73,46 @@ export class VeranstaltungService {
 	deleteVeranstaltung(veranstaltungID: number) {
 		return this.http
 			.delete(`/api/veranstaltung/delete?id=${veranstaltungID}`)
+			.pipe(
+				catchError((err) => {
+					return of({});
+				})
+			);
+	}
+
+	getHardwareByVeranstaltung(veranstaltungID: number) {
+		return this.http
+			.get<
+				HardwareList[]
+			>(`/api/veranstaltung-hardware?idveranstaltung=${veranstaltungID}`)
+			.pipe(
+				catchError((err) => {
+					return of({} as VeranstaltungList[]);
+				})
+			);
+	}
+
+	deleteHardwareFromVeranstaltung(
+		hardwareID: number,
+		veranstaltungID: number
+	) {
+		return this.http
+			.delete(
+				`/api/veranstaltung-hardware/delete?idhardware=${hardwareID}&idveranstaltung=${veranstaltungID}`
+			)
+			.pipe(
+				catchError((err) => {
+					return of({});
+				})
+			);
+	}
+
+	addHardwareToVeranstaltung(veranstaltungID: number, hardwareID: number) {
+		return this.http
+			.post(
+				`/api/veranstaltung-hardware/create?idhardware=${hardwareID}&idveranstaltung=${veranstaltungID}`,
+				{}
+			)
 			.pipe(
 				catchError((err) => {
 					return of({});

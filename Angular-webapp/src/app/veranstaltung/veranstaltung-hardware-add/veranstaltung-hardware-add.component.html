@@ -1,0 +1,37 @@
+<div id="main">
+	<h1>Hardware hinzufügen</h1>
+	<br />
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th scope="col">Hardware Backend ID</th>
+				<th scope="col">modell</th>
+				<th scope="col">typ</th>
+				<th scope="col">zustand</th>
+				<th scope="col">Hardware wählen</th>
+				<th scope="col">Hardware zur Veranstaltung hinzufügen</th>
+			</tr>
+			<tr *ngFor="let hardware of hardwareList">
+				<td>{{ hardware.id }}</td>
+				<td>{{ hardware.modell }}</td>
+				<td>{{ hardware.typ }}</td>
+				<td>{{ hardware.zustand }}</td>
+				<td>
+					<button
+						class="btn btn-primary"
+						[routerLink]="['/hardwarelist', hardware.id]">
+						Select
+					</button>
+				</td>
+				<td>
+					<button
+						class="btn btn-primary"
+						(click)="addHardwaretoVeranstaltung(hardware.id)">
+						Add
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

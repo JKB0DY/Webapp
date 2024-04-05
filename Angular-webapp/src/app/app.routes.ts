@@ -9,6 +9,7 @@ import {VeranstaltungUpdateComponent} from './veranstaltung/veranstaltung-update
 import {VeranstaltungDetailsComponent} from './veranstaltung/veranstaltung-details/veranstaltung-details.component';
 import {HardwareListComponent} from './hardware/hardware-list/hardware-list.component';
 import {VeranstaltungListComponent} from './veranstaltung/veranstaltung-list/veranstaltung-list.component';
+import {VeranstaltungHardwareAddComponent} from './veranstaltung/veranstaltung-hardware-add/veranstaltung-hardware-add.component';
 
 export const routes: Routes = [
 	{path: 'login', component: LoginComponent},
@@ -23,6 +24,10 @@ export const routes: Routes = [
 		component: VeranstaltungUpdateComponent,
 	},
 	{path: 'veranstaltunglist/:id', component: VeranstaltungDetailsComponent},
+	{
+		path: 'veranstaltunglist/:id/hardware/add',
+		component: VeranstaltungHardwareAddComponent,
+	},
 	{path: 'not-found', component: NotfoundComponent},
 	{path: '', redirectTo: '/login', pathMatch: 'full'},
 	{
