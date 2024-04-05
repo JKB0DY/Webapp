@@ -6,7 +6,8 @@
 		"client": "npm run start --prefix Angular-webapp",
 		"prisma": "npm run start:prisma --prefix nestjs-api-webapp",
 		"start": "concurrently \"npm run server\" \"npm run client\"",
-		"start:dev": "concurrently \"npm run server\" \"npm run client\" \"npm run prisma\""
+		"start:dev": "concurrently \"npm run server\" \"npm run client\" \"npm run prisma\"",
+		"install:all": "npm install --prefix nestjs-api-webapp && npm install --prefix Angular-webapp && npm install"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
