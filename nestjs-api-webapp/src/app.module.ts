@@ -5,6 +5,7 @@ import {UserModule} from './user/user.module';
 import {HardwareModule} from './hardware/hardware.module';
 import {PrismaModule} from './prisma/prisma.module';
 import { VeranstaltungModule } from './veranstaltung/veranstaltung.module';
+import { VeranstaltungHardwareModule } from './veranstaltung-hardware/veranstaltung-hardware.module';
 
 @Module({
 	imports: [
@@ -17,6 +18,7 @@ import { VeranstaltungModule } from './veranstaltung/veranstaltung.module';
 		HardwareModule,
 		PrismaModule,
 		VeranstaltungModule,
+		VeranstaltungHardwareModule,
 	],
 })
 export class AppModule {}
