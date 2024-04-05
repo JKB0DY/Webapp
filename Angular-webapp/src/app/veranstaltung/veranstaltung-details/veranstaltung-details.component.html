@@ -1,1 +1,67 @@
-<p>veranstaltung-details works!</p>
+<div id="main">
+	<h1>{{ veranstaltung.name }}</h1>
+
+	<div id="details">
+		<table class="table">
+			<tbody>
+				<tr>
+					<td>Beschreibung:</td>
+					<td>{{ veranstaltung.beschreibung }}</td>
+				</tr>
+
+				<tr>
+					<td>Ort:</td>
+					<td>{{ veranstaltung.ort }}</td>
+				</tr>
+
+				<tr>
+					<td>Veranstalter:</td>
+					<td>{{ veranstaltung.veranstalter }}</td>
+				</tr>
+
+				<tr>
+					<td>Teilnehmer:</td>
+					<td>{{ veranstaltung.teilnehmer }}</td>
+				</tr>
+
+				<tr>
+					<td>Teilnehmer Anzahl:</td>
+					<td>{{ veranstaltung.teilnehmerAnzahl }}</td>
+				</tr>
+
+				<tr>
+					<td>Aufbau beginn:</td>
+					<td>{{ veranstaltung.aufbauStart | date }}</td>
+				</tr>
+				<tr>
+					<td>Veranstaltugs beginn:</td>
+					<td>{{ veranstaltung.startDatum | date }}</td>
+				</tr>
+				<tr>
+					<td>Veranstaltugs ende:</td>
+					<td>{{ veranstaltung.endDatum | date }}</td>
+				</tr>
+				<tr>
+					<td>Abbau ende:</td>
+					<td>{{ veranstaltung.abbauEnde | date }}</td>
+				</tr>
+				<tr>
+					<td>Veranstaltung erstellt von User:</td>
+					<td>{{ veranstaltung.erstelltVon }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="buttons">
+			<button
+				class="btn btn-primary"
+				[routerLink]="['/veranstaltunglist/edit', veranstaltung.id]">
+				Bearbeiten
+			</button>
+			<button
+				class="btn btn-danger"
+				(click)="deleteVeranstaltung()">
+				Löschen
+			</button>
+		</div>
+	</div>
+</div>

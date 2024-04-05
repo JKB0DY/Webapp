@@ -26,13 +26,13 @@
 				<td>{{ veranstaltung.id }}</td>
 				<td>{{ veranstaltung.name }}</td>
 				<td>
-					{{ veranstaltung.startDatum }} bis
-					{{ veranstaltung.endDatum }}
+					{{ veranstaltung.startDatum | date: "dd MMM YYYY" }} bis
+					{{ veranstaltung.endDatum | date: "dd MMM YYYY" }}
 				</td>
 				<td>
 					<button
 						class="btn btn-primary"
-						[routerLink]="['/veranstaltungList', veranstaltung.id]">
+						[routerLink]="['/veranstaltunglist', veranstaltung.id]">
 						Select
 					</button>
 				</td>

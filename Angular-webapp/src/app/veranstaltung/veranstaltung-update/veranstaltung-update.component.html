@@ -1,1 +1,144 @@
-<p>veranstaltung-update works!</p>
+<div id="main">
+	<h1>Add Veranstaltung</h1>
+
+	<ngb-alert
+		[dismissible]="false"
+		*ngIf="msg"
+		[type]="'danger'">
+		{{ msg }}
+	</ngb-alert>
+
+	<form
+		#hardwareaddform="ngForm"
+		(ngSubmit)="updateVeranstaltung()">
+		<div class="form-group">
+			<label for="veranstaltungName">Name: (required)</label>
+			<input
+				#veranstaltungName="ngModel"
+				required
+				name="veranstaltungName"
+				type="text"
+				class="form-control"
+				id="veranstaltungName"
+				placeholder="Enter Veranstaltungsname"
+				[(ngModel)]="veranstaltung.name" />
+		</div>
+		<div
+			class="alert alert-danger"
+			*ngIf="veranstaltungName.invalid">
+			Modell is required
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungbeschreibung">Beschreibung:</label>
+			<input
+				#veranstaltungbeschreibung="ngModel"
+				required
+				name="veranstaltungbeschreibung"
+				type="text"
+				class="form-control"
+				id="veranstaltungbeschreibung"
+				placeholder="Enter Veranstaltungs beschreibung"
+				[(ngModel)]="veranstaltung.beschreibung" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungAufbauStart">Aufbau start:</label>
+			<input
+				name="veranstaltungAufbauStart"
+				type="date"
+				class="form-control"
+				id="veranstaltungAufbauStart"
+				placeholder="Enter Aufbau start Datum (Format: YYYY-MM-DD)"
+				[(ngModel)]="veranstaltung.aufbauStart" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungStart">Veranstaltungs start:</label>
+			<input
+				name="veranstaltungStart"
+				type="date"
+				class="form-control"
+				id="veranstaltungStart"
+				placeholder="Enter Veranstaltung start Datum (Format: YYYY-MM-DD)"
+				[(ngModel)]="veranstaltung.startDatum" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungEnde">Veranstaltungs Ende:</label>
+			<input
+				name="veranstaltungEnde"
+				type="date"
+				class="form-control"
+				id="veranstaltungEnde"
+				placeholder="Enter Veranstaltung End Datum (Format: YYYY-MM-DD)"
+				[(ngModel)]="veranstaltung.endDatum" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungAbbauende">Abbau Ende:</label>
+			<input
+				name="veranstaltungAbbauende"
+				type="date"
+				class="form-control"
+				id="veranstaltungAbbauende"
+				placeholder="Enter Abbau End Datum (Format: YYYY-MM-DD)"
+				[(ngModel)]="veranstaltung.aufbauStart" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungOrt">ort:</label>
+			<input
+				name="veranstaltungOrt"
+				type="text"
+				class="form-control"
+				id="veranstaltungOrt"
+				placeholder="Enter Ort"
+				[(ngModel)]="veranstaltung.ort" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungVeranstalter">Veranstalter:</label>
+			<input
+				name="veranstaltungVeranstalter"
+				type="text"
+				class="form-control"
+				id="veranstaltungVeranstalter"
+				placeholder="Enter Veranstalter"
+				[(ngModel)]="veranstaltung.veranstalter" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungTeilnehmer">Teilnehmer:</label> >
+			<input
+				name="veranstaltungTeilnehmer"
+				type="text"
+				class="form-control"
+				id="veranstaltungTeilnehmer"
+				placeholder="Enter Teilnehmer"
+				[(ngModel)]="veranstaltung.teilnehmer" />
+		</div>
+		<br />
+		<div class="form-group">
+			<label for="veranstaltungTeilnehmerAnzahl"
+				>Teilnehmer Anzahl:</label
+			>
+			<input
+				name="veranstaltungTeilnehmerAnzahl"
+				type="date"
+				class="form-control"
+				id="veranstaltungTeilnehmerAnzahl"
+				placeholder="Enter Teilnehmer Anzahl"
+				[(ngModel)]="veranstaltung.teilnehmerAnzahl" />
+		</div>
+		<br />
+		<div>
+			<button
+				[disabled]="hardwareaddform.invalid"
+				type="submit"
+				class="btn btn-primary">
+				Submit
+			</button>
+		</div>
+	</form>
+</div>
