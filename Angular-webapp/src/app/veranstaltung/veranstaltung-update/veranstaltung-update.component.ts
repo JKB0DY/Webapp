@@ -44,7 +44,7 @@ export class VeranstaltungUpdateComponent implements OnInit {
 			.subscribe((data) => {
 				if (data.name === this.veranstaltung.name) {
 					this.router.navigate([
-						'/hardwarelist/' + this.veranstaltung['id'],
+						'/veranstaltunglist/' + this.veranstaltung['id'],
 					]);
 				} else {
 					this.msg = 'Fehler beim Ändern';
