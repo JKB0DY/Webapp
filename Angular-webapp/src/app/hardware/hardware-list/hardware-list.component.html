@@ -1,49 +1,42 @@
 <div id="main">
 	<h2>{{ title }}</h2>
+	<hr />
 
 	<div>
 		<button
 			class="btn btn-primary"
 			[routerLink]="['/hardwarelist/add']">
-			Add Hardware
+			Hardware hinzufügen
 		</button>
 		<button
 			class="btn btn-primary"
 			(click)="getHardware()">
-			Refresh Hardware
+			Aktualisieren
 		</button>
 	</div>
 
 	<table class="table">
 		<tbody>
 			<tr>
-				<th scope="col">Hardware Backend ID</th>
-				<th scope="col">modell</th>
-				<th scope="col">typ</th>
-				<th scope="col">zustand</th>
-				<th scope="col">Hardware wählen</th>
+				<th scope="col">Typ</th>
+				<th scope="col">Modell</th>
+				<th scope="col">Seriennummer</th>
+				<th scope="col">Zustand</th>
+				<th scope="col">Hardwaredetails</th>
 			</tr>
 			<tr *ngFor="let hardware of hardwareList">
-				<td>{{ hardware.id }}</td>
-				<td>{{ hardware.modell }}</td>
 				<td>{{ hardware.typ }}</td>
+				<td>{{ hardware.modell }}</td>
+				<td>{{ hardware.seriennummer }}</td>
 				<td>{{ hardware.zustand }}</td>
 				<td>
 					<button
 						class="btn btn-primary"
 						[routerLink]="['/hardwarelist', hardware.id]">
-						Select
+						Details
 					</button>
 				</td>
 			</tr>
 		</tbody>
 	</table>
-
-	<div>
-		<button
-			class="btn btn-primary"
-			(click)="addHardware()">
-			Add Hardware Fast
-		</button>
-	</div>
 </div>
