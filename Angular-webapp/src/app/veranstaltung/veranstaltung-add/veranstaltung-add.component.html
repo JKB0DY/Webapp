@@ -34,7 +34,6 @@
 				<label for="veranstaltungbeschreibung">Beschreibung:</label>
 				<input
 					#veranstaltungbeschreibung="ngModel"
-					required
 					name="veranstaltungbeschreibung"
 					type="text"
 					class="form-control"
@@ -84,7 +83,7 @@
 					class="form-control"
 					id="veranstaltungAbbauende"
 					placeholder="Enter Abbau End Datum (Format: YYYY-MM-DD)"
-					[(ngModel)]="veranstaltung.aufbauStart" />
+					[(ngModel)]="veranstaltung.abbauEnde" />
 			</div>
 			<br />
 			<div class="form-group">
