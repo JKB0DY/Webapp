@@ -5,22 +5,22 @@
 		<button
 			class="btn btn-primary"
 			[routerLink]="['/veranstaltunglist/add']">
-			Add Veranstaltung
+			Veranstaltung hinzufügen
 		</button>
 		<button
 			class="btn btn-primary"
 			(click)="getVeranstaltung()">
-			Refresh
+			Aktualisieren
 		</button>
 	</div>
 
 	<table class="table">
 		<tbody>
 			<tr>
-				<th scope="col">Veranstaltung Backend ID</th>
-				<th scope="col">name</th>
-				<th scope="col">Veranstaltungs Zeitraum</th>
-				<th scope="col">Veranstaltung wählen</th>
+				<th scope="col">Veranstaltungsnummer</th>
+				<th scope="col">Name</th>
+				<th scope="col">Veranstaltungszeitraum</th>
+				<th scope="col">Veranstaltungdetails</th>
 			</tr>
 			<tr *ngFor="let veranstaltung of veranstaltungList">
 				<td>{{ veranstaltung.id }}</td>
@@ -33,17 +33,10 @@
 					<button
 						class="btn btn-primary"
 						[routerLink]="['/veranstaltunglist', veranstaltung.id]">
-						Select
+						Details
 					</button>
 				</td>
 			</tr>
 		</tbody>
 	</table>
-	<div>
-		<button
-			class="btn btn-primary"
-			(click)="addVeranstaltung()">
-			Add Veranstaltung Fast
-		</button>
-	</div>
 </div>

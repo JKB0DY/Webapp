@@ -1,160 +1,161 @@
 <div id="main">
-	<h1>Edit Hardware</h1>
+	<h1>Hardware bearbeiten</h1>
+	<div id="details">
+		<ngb-alert
+			[dismissible]="false"
+			*ngIf="msg"
+			[type]="'danger'">
+			{{ msg }}
+		</ngb-alert>
 
-	<ngb-alert
-		[dismissible]="false"
-		*ngIf="msg"
-		[type]="'danger'">
-		{{ msg }}
-	</ngb-alert>
-
-	<form
-		#hardwareaddform="ngForm"
-		(ngSubmit)="updateHardware()">
-		<div class="form-group">
-			<label for="hardwareModell">Modell: (required)</label>
-			<input
-				#hardwaremodell="ngModel"
-				required
-				name="hardwareModell"
-				type="text"
-				class="form-control"
-				id="hardwareModell"
-				placeholder="Enter hardware Modell"
-				[(ngModel)]="hardware.modell" />
-		</div>
-		<div
-			class="alert alert-danger"
-			*ngIf="hardwaremodell.invalid">
-			Modell is required
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareImage">Bild Link:</label>
-			<input
-				name="hardwareImage"
-				type="text"
-				link
-				class="form-control"
-				id="hardwareImage"
-				placeholder="Enter hardware Image Link"
-				[(ngModel)]="hardware.image" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareKaufdatum">Kaufdatum:</label>
-			<input
-				name="hardwareKaufdatum"
-				type="date"
-				class="form-control"
-				id="hardwareKaufdatum"
-				[(ngModel)]="hardware.kaufdatum" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareInhaber">Inhaber: (required)</label>
-			<select
-				required
-				name="hardwareInhaber"
-				class="form-control"
-				id="hardwareInhaber"
-				[(ngModel)]="hardware.inhaber">
-				<option value="">Choose Inhaber</option>
-				<option value="Abtei Gymnasium Brauweiler">
-					Abtei Gymnasium Brauweiler
-				</option>
-				<option value="Gesamtschule Pulheim">
-					Gesamtschule Pulheim
-				</option>
-				<option value="Beide Schulen">Beide Schulen</option>
-			</select>
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareHersteller">Hersteller:</label>
-			<input
-				name="hardwareHersteller"
-				type="text"
-				class="form-control"
-				id="hardwareHersteller"
-				placeholder="Enter Hersteller"
-				[(ngModel)]="hardware.hersteller" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareSeriennummer">Seriennummer:</label>
-			<input
-				name="hardwareSeriennummer"
-				type="text"
-				class="form-control"
-				id="hardwareSeriennummer"
-				placeholder="Enter Seriennummer"
-				[(ngModel)]="hardware.seriennummer" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareTyp">Typ:</label>
-			<input
-				name="hardwareTyp"
-				type="text"
-				class="form-control"
-				id="hardwareTyp"
-				placeholder="Enter Typ"
-				[(ngModel)]="hardware.typ" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareZustand">Zustand:</label>
-			<input
-				name="hardwareZustand"
-				type="text"
-				class="form-control"
-				id="hardwareZustand"
-				placeholder="Enter Zustand"
-				[(ngModel)]="hardware.zustand" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="hardwareZustandsbeschreibung"
-				>Zustandsbeschreibung:</label
-			>
-			<input
-				name="hardwareZustandsbeschreibung"
-				type="text"
-				class="form-control"
-				id="hardwareZustandsbeschreibung"
-				placeholder="Enter Zustandsbeschreibung"
-				[(ngModel)]="hardware.zustandBeschreibung" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="zustandDatum">Zustand Datum:</label>
-			<input
-				name="zustandDatum"
-				type="date"
-				class="form-control"
-				id="zustandDatum"
-				[(ngModel)]="hardware.zustandDatum" />
-		</div>
-		<br />
-		<div class="form-group">
-			<label for="prufDatum">Prüf Datum:</label>
-			<input
-				name="prufDatum"
-				type="date"
-				class="form-control"
-				id="prufDatum"
-				[ngModel]="hardware.pruefungsDatum | date: 'yyyy-mm-dd'"
-				(ngModelChange)="hardware.pruefungsDatum = $event" />
-		</div>
-		<br />
-		<div>
-			<button
-				[disabled]="hardwareaddform.invalid"
-				type="submit"
-				class="btn btn-primary">
-				Submit
-			</button>
-		</div>
-	</form>
+		<form
+			#hardwareaddform="ngForm"
+			(ngSubmit)="updateHardware()">
+			<div class="form-group">
+				<label for="hardwareModell">Modell:</label>
+				<input
+					#hardwaremodell="ngModel"
+					required
+					name="hardwareModell"
+					type="text"
+					class="form-control"
+					id="hardwareModell"
+					placeholder="Enter hardware Modell"
+					[(ngModel)]="hardware.modell" />
+			</div>
+			<div
+				class="alert alert-danger"
+				*ngIf="hardwaremodell.invalid">
+				Modell is required
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareImage">Bild Link:</label>
+				<input
+					name="hardwareImage"
+					type="text"
+					link
+					class="form-control"
+					id="hardwareImage"
+					placeholder="Enter hardware Image Link"
+					[(ngModel)]="hardware.image" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareKaufdatum">Kaufdatum:</label>
+				<input
+					name="hardwareKaufdatum"
+					type="date"
+					class="form-control"
+					id="hardwareKaufdatum"
+					[(ngModel)]="hardware.kaufdatum" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareInhaber">Inhaber: (erforderlich)</label>
+				<select
+					required
+					name="hardwareInhaber"
+					class="form-control"
+					id="hardwareInhaber"
+					[(ngModel)]="hardware.inhaber">
+					<option value="">Choose Inhaber</option>
+					<option value="Abtei Gymnasium Brauweiler">
+						Abtei Gymnasium Brauweiler
+					</option>
+					<option value="Gesamtschule Pulheim">
+						Gesamtschule Pulheim
+					</option>
+					<option value="Beide Schulen">Beide Schulen</option>
+				</select>
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareHersteller">Hersteller:</label>
+				<input
+					name="hardwareHersteller"
+					type="text"
+					class="form-control"
+					id="hardwareHersteller"
+					placeholder="Enter Hersteller"
+					[(ngModel)]="hardware.hersteller" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareSeriennummer">Seriennummer:</label>
+				<input
+					name="hardwareSeriennummer"
+					type="text"
+					class="form-control"
+					id="hardwareSeriennummer"
+					placeholder="Enter Seriennummer"
+					[(ngModel)]="hardware.seriennummer" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareTyp">Typ:</label>
+				<input
+					name="hardwareTyp"
+					type="text"
+					class="form-control"
+					id="hardwareTyp"
+					placeholder="Enter Typ"
+					[(ngModel)]="hardware.typ" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareZustand">Zustand:</label>
+				<input
+					name="hardwareZustand"
+					type="text"
+					class="form-control"
+					id="hardwareZustand"
+					placeholder="Enter Zustand"
+					[(ngModel)]="hardware.zustand" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="hardwareZustandsbeschreibung"
+					>Zustandsbeschreibung:</label
+				>
+				<input
+					name="hardwareZustandsbeschreibung"
+					type="text"
+					class="form-control"
+					id="hardwareZustandsbeschreibung"
+					placeholder="Enter Zustandsbeschreibung"
+					[(ngModel)]="hardware.zustandBeschreibung" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="zustandDatum">Zustand Datum:</label>
+				<input
+					name="zustandDatum"
+					type="date"
+					class="form-control"
+					id="zustandDatum"
+					[(ngModel)]="hardware.zustandDatum" />
+			</div>
+			<br />
+			<div class="form-group">
+				<label for="prufDatum">Prüfdatum:</label>
+				<input
+					name="prufDatum"
+					type="date"
+					class="form-control"
+					id="prufDatum"
+					[ngModel]="hardware.pruefungsDatum | date: 'yyyy-mm-dd'"
+					(ngModelChange)="hardware.pruefungsDatum = $event" />
+			</div>
+			<br />
+			<div>
+				<button
+					[disabled]="hardwareaddform.invalid"
+					type="submit"
+					class="btn btn-primary">
+					Submit
+				</button>
+			</div>
+		</form>
+	</div>
 </div>

@@ -12,7 +12,7 @@ import {VeranstaltungService} from '../service/veranstaltung.service';
 	styleUrl: './veranstaltung-list.component.scss',
 })
 export class VeranstaltungListComponent implements OnInit {
-	title: string = 'Veranstaltung list';
+	title: string = 'Veranstaltungen:';
 	veranstaltungList: VeranstaltungList[] = [];
 
 	constructor(private veranstaltungService: VeranstaltungService) {}

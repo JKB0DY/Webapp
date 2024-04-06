@@ -15,7 +15,7 @@ export class VeranstaltungHardwareComponent implements OnInit {
 	@Input() idVeranstaltung = 0;
 
 	hardwareList: HardwareList[] = [];
-	title: string = 'Used Hardware list';
+	title: string = 'Der Veranstaltung zugeordnete Hardware:';
 
 	constructor(private veranstaltungService: VeranstaltungService) {}
 

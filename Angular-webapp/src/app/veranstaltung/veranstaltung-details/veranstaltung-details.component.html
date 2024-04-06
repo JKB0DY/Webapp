@@ -30,24 +30,20 @@
 				</tr>
 
 				<tr>
-					<td>Aufbau beginn:</td>
+					<td>Beginn Aufbau:</td>
 					<td>{{ veranstaltung.aufbauStart | date }}</td>
 				</tr>
 				<tr>
-					<td>Veranstaltugs beginn:</td>
+					<td>Beginn Veranstaltung:</td>
 					<td>{{ veranstaltung.startDatum | date }}</td>
 				</tr>
 				<tr>
-					<td>Veranstaltugs ende:</td>
+					<td>Ende Veranstaltung:</td>
 					<td>{{ veranstaltung.endDatum | date }}</td>
 				</tr>
 				<tr>
-					<td>Abbau ende:</td>
+					<td>Ende Abbau:</td>
 					<td>{{ veranstaltung.abbauEnde | date }}</td>
-				</tr>
-				<tr>
-					<td>Veranstaltung erstellt von User:</td>
-					<td>{{ veranstaltung.erstelltVon }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -63,6 +59,7 @@
 				Löschen
 			</button>
 		</div>
+		<hr />
 
 		<bltinv-veranstaltung-hardware
 			[idVeranstaltung]="id"></bltinv-veranstaltung-hardware>

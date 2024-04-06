@@ -1,5 +1,5 @@
 <div id="main">
-	<h1>Add Veranstaltung</h1>
+	<h1>Veranstaltung hinzufügen</h1>
 
 	<div id="details">
 		<ngb-alert
@@ -13,7 +13,7 @@
 			#hardwareaddform="ngForm"
 			(ngSubmit)="addVeranstaltung()">
 			<div class="form-group">
-				<label for="veranstaltungName">Name: (required)</label>
+				<label for="veranstaltungName">Name:</label>
 				<input
 					#veranstaltungName="ngModel"
 					required
@@ -21,13 +21,13 @@
 					type="text"
 					class="form-control"
 					id="veranstaltungName"
-					placeholder="Enter Veranstaltungsname"
+					placeholder="Geben Sie den Veranstaltungsnamen ein"
 					[(ngModel)]="veranstaltung.name" />
 			</div>
 			<div
 				class="alert alert-danger"
 				*ngIf="veranstaltungName.invalid">
-				Modell is required
+				Modell ist notwendig
 			</div>
 			<br />
 			<div class="form-group">
@@ -38,12 +38,12 @@
 					type="text"
 					class="form-control"
 					id="veranstaltungbeschreibung"
-					placeholder="Enter Veranstaltungs beschreibung"
+					placeholder="Geben Sie eine Beschreibung ein"
 					[(ngModel)]="veranstaltung.beschreibung" />
 			</div>
 			<br />
 			<div class="form-group">
-				<label for="veranstaltungAufbauStart">Aufbau start:</label>
+				<label for="veranstaltungAufbauStart">Start Aufbau:</label>
 				<input
 					name="veranstaltungAufbauStart"
 					type="date"
@@ -54,7 +54,7 @@
 			</div>
 			<br />
 			<div class="form-group">
-				<label for="veranstaltungStart">Veranstaltungs start:</label>
+				<label for="veranstaltungStart">Start Veranstaltung:</label>
 				<input
 					name="veranstaltungStart"
 					type="date"
@@ -65,7 +65,7 @@
 			</div>
 			<br />
 			<div class="form-group">
-				<label for="veranstaltungEnde">Veranstaltungs Ende:</label>
+				<label for="veranstaltungEnde">Ende Veranstaltung:</label>
 				<input
 					name="veranstaltungEnde"
 					type="date"
@@ -76,7 +76,7 @@
 			</div>
 			<br />
 			<div class="form-group">
-				<label for="veranstaltungAbbauende">Abbau Ende:</label>
+				<label for="veranstaltungAbbauende">Ende Abbau:</label>
 				<input
 					name="veranstaltungAbbauende"
 					type="date"
@@ -87,13 +87,13 @@
 			</div>
 			<br />
 			<div class="form-group">
-				<label for="veranstaltungOrt">ort:</label>
+				<label for="veranstaltungOrt">Ort:</label>
 				<input
 					name="veranstaltungOrt"
 					type="text"
 					class="form-control"
 					id="veranstaltungOrt"
-					placeholder="Enter Ort"
+					placeholder="Geben Sie den Veranstaltungsort ein"
 					[(ngModel)]="veranstaltung.ort" />
 			</div>
 			<br />
@@ -104,7 +104,7 @@
 					type="text"
 					class="form-control"
 					id="veranstaltungVeranstalter"
-					placeholder="Enter Veranstalter"
+					placeholder="Wer ist der Veranstalter?"
 					[(ngModel)]="veranstaltung.veranstalter" />
 			</div>
 			<br />
@@ -115,7 +115,7 @@
 					type="text"
 					class="form-control"
 					id="veranstaltungTeilnehmer"
-					placeholder="Enter Teilnehmer"
+					placeholder="Wer sind die Teilnehmer?"
 					[(ngModel)]="veranstaltung.teilnehmer" />
 			</div>
 			<br />
@@ -128,7 +128,7 @@
 					type="text"
 					class="form-control"
 					id="veranstaltungTeilnehmerAnzahl"
-					placeholder="Enter Teilnehmer Anzahl"
+					placeholder="Wie viele Teilnehmer sind zu erwarten?"
 					[(ngModel)]="veranstaltung.teilnehmerAnzahl" />
 			</div>
 			<br />
@@ -137,7 +137,7 @@
 					[disabled]="hardwareaddform.invalid"
 					type="submit"
 					class="btn btn-primary">
-					Submit
+					hinzufügen
 				</button>
 			</div>
 		</form>

@@ -1,5 +1,6 @@
 <div id="main">
 	<h1>{{ hardware.modell }}</h1>
+	<hr />
 
 	<div id="details">
 		<table class="table">
@@ -25,18 +26,13 @@
 				</tr>
 
 				<tr>
-					<td>Zustands Beschreibung:</td>
+					<td>Zustandsbeschreibung:</td>
 					<td>{{ hardware.zustandBeschreibung }}</td>
 				</tr>
 
 				<tr>
-					<td>Zustand Geprüft am:</td>
+					<td>Zustand geprüft am:</td>
 					<td>{{ hardware.zustandDatum | date }}</td>
-				</tr>
-
-				<tr>
-					<td>Zustand Geprüft von User:</td>
-					<td>{{ hardware.zustandUserID }}</td>
 				</tr>
 			</tbody>
 		</table>
