@@ -41,7 +41,7 @@ export class VeranstaltungAddComponent implements OnInit {
 			.addVeranstaltung(this.veranstaltung)
 			.subscribe((data) => {
 				if (data.name === this.veranstaltung.name) {
-					this.router.navigate(['/hardwarelist']);
+					this.router.navigate(['/veranstaltunglist']);
 				} else {
 					this.msg = 'Fehler beim Hinzufügen';
 				}
