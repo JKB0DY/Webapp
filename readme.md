@@ -1,24 +1,48 @@
 # Besondere Lernleistung - Readme
 
-Willkommen zur Dokumentation meiner besonderen Lernleistung!
+Willkommen zur Readme meiner besonderen Lernleistung
 
 ## Einleitung
 
-Dieses Repository enthält die besondere Lernleistung im Rahmen meines Schulauftrags. Ziel des Projekts war die Entwicklung einer innovativen Plattform zur Verbesserung der Verwaltung und Kommunikation im Bereich Veranstaltungstechnik an unserer Schule.
+Dieses Repository enthält die besondere Lernleistung im Rahmen meines Abitur. Ziel des Projekts war die Entwicklung einer Web-Plattform zur Verbesserung der Verwaltung und Kommunikation im Bereich Veranstaltungstechnik an unserer Schule.
+
+## Requirements
+- [Docker (bzw. Docker Desktop)](https://www.docker.com/products/docker-desktop/)
+- [Node Js](https://nodejs.org/en)
 
 ## Installation
 
-Um die Plattform lokal zu testen, führen Sie bitte die folgenden Schritte aus:
-1. Klone das Repository auf deinen lokalen Rechner.
+Um die Web-Plattform lokal zu testen, führen Sie bitte die folgenden Schritte aus:
+
+1. Klone das Repository auf deinen lokalen Rechner:
+
+   ```bash
+   git clone https://github.com/JKB0DY/Webapp.git
+   ```
+
 2. Navigiere in das Verzeichnis der heruntergeladenen Dateien.
-3. Installiere die erforderlichen Abhängigkeiten mit dem Befehl `npm install`.
-4. Starte die Anwendung mit dem Befehl `npm start`.
-5. Öffne einen Webbrowser und navigiere zur URL `http://localhost:3000`.
+
+3. Installiere die erforderlichen Abhängigkeiten aller Bereiche und initialisiere die Datenbank:
+
+   ```bash
+   npm run install:all:first
+   ```
+
+4. Starte alle Services:
+
+   ```bash
+   npm run start:dev
+   ```
+
+Um die Anwendung zu beenden, muss nur `Strg` + `C` gedrückt werden und dann mit `J` + `Enter` bzw. `Y` + `Enter` bestätigt werden.
+
 
 ## Plattform erklärt
+Nun ist auf http://localhost:3333 die API erreichbar, auf http://localhost:5555 befindet sich ein Datenbank-Viewing-Tool namens Prisma Studio, und auf http://localhost:4200 ist die Web-Anwendung erreichbar.
 
-Die entwickelte Plattform bietet eine zentrale Anlaufstelle für die Verwaltung von Veranstaltungen und technischen Ressourcen. Nutzer können Veranstaltungen erstellen, bearbeiten und löschen sowie Informationen zu verfügbaren technischen Geräten abrufen.
+An der linken Seite sind die zwei Bereiche der Plattform verlinkt. Diese können von jeder anderen Seite aus angeklickt werden und leiten auf entsprechende Übersichtsseiten weiter. Um von Seiten auf vorherige Seiten zurückzugelangen, empfehle ich, den Browser-internen Zurück-Button zu nutzen.
 
-Die Plattform zeichnet sich durch eine benutzerfreundliche Oberfläche aus und ermöglicht eine effiziente Organisation von Veranstaltungen. Durch die klare Strukturierung und einfache Bedienbarkeit wird die Kommunikation im Veranstaltungsbereich verbessert und die Effizienz gesteigert.
+Um Tests zu vereinfachen, ist der Login-Screen aktuell so konfiguriert, dass wenn eine E-Mail-Adresse eingegeben wird, die noch nicht in der Datenbank ist, diese mit einem entsprechenden Passwort in die Datenbank eingepflegt wird. Danach funktioniert der Login-Prozess ganz normal.
 
-Vielen Dank für Ihr Interesse an meiner besonderen Lernleistung!
+
+Viel Spaß
