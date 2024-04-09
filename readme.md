@@ -1,25 +1,24 @@
-# Web Application Readme
+# Besondere Lernleistung - Readme
 
-This is the readme file for a web application written in Nest.js with an Angular front-end.
+Willkommen zur Dokumentation meiner besonderen Lernleistung!
+
+## Einleitung
+
+Dieses Repository enthält die besondere Lernleistung im Rahmen meines Schulauftrags. Ziel des Projekts war die Entwicklung einer innovativen Plattform zur Verbesserung der Verwaltung und Kommunikation im Bereich Veranstaltungstechnik an unserer Schule.
 
 ## Installation
 
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Run `npm install` to install the dependencies.
+Um die Plattform lokal zu testen, führen Sie bitte die folgenden Schritte aus:
+1. Klone das Repository auf deinen lokalen Rechner.
+2. Navigiere in das Verzeichnis der heruntergeladenen Dateien.
+3. Installiere die erforderlichen Abhängigkeiten mit dem Befehl `npm install`.
+4. Starte die Anwendung mit dem Befehl `npm start`.
+5. Öffne einen Webbrowser und navigiere zur URL `http://localhost:3000`.
 
-## Development Server
+## Plattform erklärt
 
-Run `npm run start:dev` to start the development server. The application will be accessible at `http://localhost:3000`.
+Die entwickelte Plattform bietet eine zentrale Anlaufstelle für die Verwaltung von Veranstaltungen und technischen Ressourcen. Nutzer können Veranstaltungen erstellen, bearbeiten und löschen sowie Informationen zu verfügbaren technischen Geräten abrufen.
 
-## Build
+Die Plattform zeichnet sich durch eine benutzerfreundliche Oberfläche aus und ermöglicht eine effiziente Organisation von Veranstaltungen. Durch die klare Strukturierung und einfache Bedienbarkeit wird die Kommunikation im Veranstaltungsbereich verbessert und die Effizienz gesteigert.
 
-Run `npm run build` to build the application for production. The build artifacts will be stored in the `dist/` directory.
-
-## Running Tests
-
-Run `npm run test` to execute the unit tests.
-
-## Further Information
-
-For more information on how to use and configure this web application, please refer to the documentation in the `docs/` directory.
+Vielen Dank für Ihr Interesse an meiner besonderen Lernleistung!
