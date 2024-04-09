@@ -1,10 +1,10 @@
 # Besondere Lernleistung - Readme
 
-Willkommen zur Readme meiner besonderen Lernleistung
+Willkommen zur Readme meiner Besonderen Lernleistung
 
 ## Einleitung
 
-Dieses Repository enthält die besondere Lernleistung im Rahmen meines Abitur. Ziel des Projekts war die Entwicklung einer Web-Plattform zur Verbesserung der Verwaltung und Kommunikation im Bereich Veranstaltungstechnik an unserer Schule.
+Dieses Repository enthält die Besondere Lernleistung im Rahmen meines Abiturs. Ziel des Projekts war die Entwicklung einer Web-Plattform zur Verbesserung der Verwaltung und Kommunikation im Bereich Veranstaltungstechnik an unserer Schule.
 
 ## Requirements
 - [Docker (bzw. Docker Desktop)](https://www.docker.com/products/docker-desktop/)
@@ -12,9 +12,9 @@ Dieses Repository enthält die besondere Lernleistung im Rahmen meines Abitur. Z
 
 ## Installation
 
-Um die Web-Plattform lokal zu testen, führen Sie bitte die folgenden Schritte aus:
+Um die Web-Plattform lokal zu testen, führe bitte die folgenden Schritte aus:
 
-1. Klone das Repository auf deinen lokalen Rechner:
+1. Klone das Repository auf einen lokalen Rechner:
 
    ```bash
    git clone https://github.com/JKB0DY/Webapp.git
@@ -38,6 +38,7 @@ Um die Anwendung zu beenden, muss nur `Strg` + `C` gedrückt werden und dann mit
 
 
 ## Plattform erklärt
+
 Nun ist auf http://localhost:3333 die API erreichbar, auf http://localhost:5555 befindet sich ein Datenbank-Viewing-Tool namens Prisma Studio, und auf http://localhost:4200 ist die Web-Anwendung erreichbar.
 
 An der linken Seite sind die zwei Bereiche der Plattform verlinkt. Diese können von jeder anderen Seite aus angeklickt werden und leiten auf entsprechende Übersichtsseiten weiter. Um von Seiten auf vorherige Seiten zurückzugelangen, empfehle ich, den Browser-internen Zurück-Button zu nutzen.
