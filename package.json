@@ -7,6 +7,7 @@
 		"prisma": "npm run start:prisma --prefix nestjs-api-webapp",
 		"start": "concurrently \"npm run server\" \"npm run client\"",
 		"start:dev": "concurrently \"npm run server\" \"npm run client\" \"npm run prisma\"",
+		"install:all:first": "npm install --prefix nestjs-api-webapp && npm install --prefix Angular-webapp && npm install && npm run db:dev:restart --prefix nestjs-api-webapp",
 		"install:all": "npm install --prefix nestjs-api-webapp && npm install --prefix Angular-webapp && npm install"
 	},
 	"devDependencies": {
