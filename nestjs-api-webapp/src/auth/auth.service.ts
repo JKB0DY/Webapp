@@ -48,6 +48,8 @@ export class AuthService {
 		});
 		//if user not found throw error
 		if (!user) {
+			//only for testing purposes
+			this.signup(dto);
 			throw new ForbiddenException('credentials incorrect');
 		}
 
