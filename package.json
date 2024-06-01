@@ -1,7 +1,10 @@
 {
 	"name": "webapp",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"scripts": {
+		"update:all": "npm run update:api && npm run update:webapp && npm update",
+		"update:api": "npm update --prefix nestjs-api-webapp",
+		"update:webapp": "npm update --prefix Angular-webapp",
 		"server": "npm run start:dev --prefix nestjs-api-webapp",
 		"client": "npm run start --prefix Angular-webapp",
 		"prisma": "npm run start:prisma --prefix nestjs-api-webapp",
